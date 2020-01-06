@@ -1,0 +1,12 @@
+{"presetjson":{ 
+	"left_eye":"normal", 
+	"right_eye":"normal", 
+	"lip_color":"normal",
+	"vomit_state":false,
+	"body_scar":"off",
+	"ecg":[120, 120, 0, 0, 0, 0],
+	"heart_track":"off",
+	"left_lung_track":"off",
+	"right_lung_track":"off"
+	}
+}

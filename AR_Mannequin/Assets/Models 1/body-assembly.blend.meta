@@ -1,0 +1,239 @@
+fileFormatVersion: 2
+guid: 9dba702f80e25c34296d7c1963bf2fe3
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: anneBody
+    100002: anneHead
+    100004: annehead_chinOnly_noBreathing
+    100006: anneHead_lipsOnly
+    100008: Aortic
+    100010: //RootNode
+    100012: bool_annehead_chinOnly_
+    100014: bool_FinalBody
+    100016: imgTarget2-1
+    100018: imgTarget2-1-mount
+    100020: imgTarget2-1-savePlastic
+    100022: imgTarget2-2
+    100024: imgTarget2-2-mount
+    100026: imgTarget2-2-mount-boolApplied
+    100028: imgTarget2-2-savePlastic
+    100030: IMU_board
+    100032: IMU_board_mount
+    100034: IMU_head_mount
+    100036: Mitral
+    100038: neck_head_joint
+    100040: Pulmonary
+    100042: table
+    100044: Tricuspid
+    100046: bool annehead_chinOnly_
+    100048: bool FinalBody
+    100050: Camera
+    100052: IMU board
+    100054: IMU board mount
+    100056: Lamp
+    100058: neck head joint
+    400000: anneBody
+    400002: anneHead
+    400004: annehead_chinOnly_noBreathing
+    400006: anneHead_lipsOnly
+    400008: Aortic
+    400010: //RootNode
+    400012: bool_annehead_chinOnly_
+    400014: bool_FinalBody
+    400016: imgTarget2-1
+    400018: imgTarget2-1-mount
+    400020: imgTarget2-1-savePlastic
+    400022: imgTarget2-2
+    400024: imgTarget2-2-mount
+    400026: imgTarget2-2-mount-boolApplied
+    400028: imgTarget2-2-savePlastic
+    400030: IMU_board
+    400032: IMU_board_mount
+    400034: IMU_head_mount
+    400036: Mitral
+    400038: neck_head_joint
+    400040: Pulmonary
+    400042: table
+    400044: Tricuspid
+    400046: bool annehead_chinOnly_
+    400048: bool FinalBody
+    400050: Camera
+    400052: IMU board
+    400054: IMU board mount
+    400056: Lamp
+    400058: neck head joint
+    2000000: Camera
+    2100000: unnamed
+    2100002: No Name
+    2300000: anneBody
+    2300002: anneHead
+    2300004: annehead_chinOnly_noBreathing
+    2300006: anneHead_lipsOnly
+    2300008: Aortic
+    2300010: bool_annehead_chinOnly_
+    2300012: bool_FinalBody
+    2300014: imgTarget2-1
+    2300016: imgTarget2-1-mount
+    2300018: imgTarget2-1-savePlastic
+    2300020: imgTarget2-2
+    2300022: imgTarget2-2-mount
+    2300024: imgTarget2-2-mount-boolApplied
+    2300026: imgTarget2-2-savePlastic
+    2300028: IMU_board
+    2300030: IMU_board_mount
+    2300032: IMU_head_mount
+    2300034: Mitral
+    2300036: neck_head_joint
+    2300038: Pulmonary
+    2300040: table
+    2300042: Tricuspid
+    2300044: bool annehead_chinOnly_
+    2300046: bool FinalBody
+    2300048: IMU board
+    2300050: IMU board mount
+    2300052: neck head joint
+    3300000: anneBody
+    3300002: anneHead
+    3300004: annehead_chinOnly_noBreathing
+    3300006: anneHead_lipsOnly
+    3300008: Aortic
+    3300010: bool_annehead_chinOnly_
+    3300012: bool_FinalBody
+    3300014: imgTarget2-1
+    3300016: imgTarget2-1-mount
+    3300018: imgTarget2-1-savePlastic
+    3300020: imgTarget2-2
+    3300022: imgTarget2-2-mount
+    3300024: imgTarget2-2-mount-boolApplied
+    3300026: imgTarget2-2-savePlastic
+    3300028: IMU_board
+    3300030: IMU_board_mount
+    3300032: IMU_head_mount
+    3300034: Mitral
+    3300036: neck_head_joint
+    3300038: Pulmonary
+    3300040: table
+    3300042: Tricuspid
+    3300044: bool annehead_chinOnly_
+    3300046: bool FinalBody
+    3300048: IMU board
+    3300050: IMU board mount
+    3300052: neck head joint
+    4300000: anneBody
+    4300002: anneHead
+    4300004: IMU_board_mount
+    4300006: bool_annehead_chinOnly_
+    4300008: IMU_head_mount
+    4300010: imgTarget2-1-savePlastic
+    4300012: neck_head_joint
+    4300014: table
+    4300016: IMU_board
+    4300018: bool_FinalBody
+    4300020: imgTarget2-1-mount
+    4300022: imgTarget2-1
+    4300024: imgTarget2-2-savePlastic
+    4300026: imgTarget2-2-mount
+    4300028: imgTarget2-2-mount-boolApplied
+    4300030: imgTarget2-2
+    4300032: annehead_chinOnly_noBreathing
+    4300034: Aortic
+    4300036: Mitral
+    4300038: Pulmonary
+    4300040: Tricuspid
+    4300042: anneHead_lipsOnly
+    4300044: IMU board mount
+    4300046: bool annehead_chinOnly_
+    4300048: neck head joint
+    4300050: IMU board
+    4300052: bool FinalBody
+    7400000: Default Take
+    9500000: //RootNode
+    10800000: Lamp
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

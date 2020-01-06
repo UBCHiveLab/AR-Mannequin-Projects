@@ -1,0 +1,3 @@
+body_scar:body_without_scar,body_with_scar
+hand_tool:penlight-with-light,stethoscope-tip
+lips_color:normal-lips,purple-lips

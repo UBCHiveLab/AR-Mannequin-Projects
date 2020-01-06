@@ -1,0 +1,252 @@
+fileFormatVersion: 2
+guid: 8f202d97fb540cf44bd88c01b634cfbf
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: anne-face
+    100002: anneBody
+    100004: annehead_chinOnly_noBreathing
+    100006: anneHead_lipsOnly
+    100008: Aortic
+    100010: //RootNode
+    100012: bool annehead_chinOnly_
+    100014: bool FinalBody
+    100016: Camera
+    100018: imgTarget2-1
+    100020: imgTarget2-1-mount
+    100022: imgTarget2-1-savePlastic
+    100024: imgTarget2-2
+    100026: imgTarget2-2-mount
+    100028: imgTarget2-2-mount-boolApplied
+    100030: imgTarget2-2-savePlastic
+    100032: imgTargetShoulder-1
+    100034: imgTargetShoulder-1-saveplastic
+    100036: imgTargetShoulder-2
+    100038: imgTargetShoulder-2-saveplastic
+    100040: imgTargetShoulder-mount
+    100042: imgTargetShoulder-mount-1
+    100044: imgTargetShoulder-mount-2
+    100046: imgTargetShoulder-mount-saveplastic
+    100048: IMU board
+    100050: IMU board mount
+    100052: IMU_head_mount
+    100054: Lamp
+    100056: Mitral
+    100058: neck head joint
+    100060: Pulmonary
+    100062: table
+    100064: Tricuspid
+    400000: anne-face
+    400002: anneBody
+    400004: annehead_chinOnly_noBreathing
+    400006: anneHead_lipsOnly
+    400008: Aortic
+    400010: //RootNode
+    400012: bool annehead_chinOnly_
+    400014: bool FinalBody
+    400016: Camera
+    400018: imgTarget2-1
+    400020: imgTarget2-1-mount
+    400022: imgTarget2-1-savePlastic
+    400024: imgTarget2-2
+    400026: imgTarget2-2-mount
+    400028: imgTarget2-2-mount-boolApplied
+    400030: imgTarget2-2-savePlastic
+    400032: imgTargetShoulder-1
+    400034: imgTargetShoulder-1-saveplastic
+    400036: imgTargetShoulder-2
+    400038: imgTargetShoulder-2-saveplastic
+    400040: imgTargetShoulder-mount
+    400042: imgTargetShoulder-mount-1
+    400044: imgTargetShoulder-mount-2
+    400046: imgTargetShoulder-mount-saveplastic
+    400048: IMU board
+    400050: IMU board mount
+    400052: IMU_head_mount
+    400054: Lamp
+    400056: Mitral
+    400058: neck head joint
+    400060: Pulmonary
+    400062: table
+    400064: Tricuspid
+    2000000: Camera
+    2100000: No Name
+    2100002: Default OBJ
+    2300000: anne-face
+    2300002: anneBody
+    2300004: annehead_chinOnly_noBreathing
+    2300006: anneHead_lipsOnly
+    2300008: Aortic
+    2300010: bool annehead_chinOnly_
+    2300012: bool FinalBody
+    2300014: imgTarget2-1
+    2300016: imgTarget2-1-mount
+    2300018: imgTarget2-1-savePlastic
+    2300020: imgTarget2-2
+    2300022: imgTarget2-2-mount
+    2300024: imgTarget2-2-mount-boolApplied
+    2300026: imgTarget2-2-savePlastic
+    2300028: imgTargetShoulder-1
+    2300030: imgTargetShoulder-1-saveplastic
+    2300032: imgTargetShoulder-2
+    2300034: imgTargetShoulder-2-saveplastic
+    2300036: imgTargetShoulder-mount
+    2300038: imgTargetShoulder-mount-1
+    2300040: imgTargetShoulder-mount-2
+    2300042: imgTargetShoulder-mount-saveplastic
+    2300044: IMU board
+    2300046: IMU board mount
+    2300048: IMU_head_mount
+    2300050: Mitral
+    2300052: neck head joint
+    2300054: Pulmonary
+    2300056: table
+    2300058: Tricuspid
+    3300000: anne-face
+    3300002: anneBody
+    3300004: annehead_chinOnly_noBreathing
+    3300006: anneHead_lipsOnly
+    3300008: Aortic
+    3300010: bool annehead_chinOnly_
+    3300012: bool FinalBody
+    3300014: imgTarget2-1
+    3300016: imgTarget2-1-mount
+    3300018: imgTarget2-1-savePlastic
+    3300020: imgTarget2-2
+    3300022: imgTarget2-2-mount
+    3300024: imgTarget2-2-mount-boolApplied
+    3300026: imgTarget2-2-savePlastic
+    3300028: imgTargetShoulder-1
+    3300030: imgTargetShoulder-1-saveplastic
+    3300032: imgTargetShoulder-2
+    3300034: imgTargetShoulder-2-saveplastic
+    3300036: imgTargetShoulder-mount
+    3300038: imgTargetShoulder-mount-1
+    3300040: imgTargetShoulder-mount-2
+    3300042: imgTargetShoulder-mount-saveplastic
+    3300044: IMU board
+    3300046: IMU board mount
+    3300048: IMU_head_mount
+    3300050: Mitral
+    3300052: neck head joint
+    3300054: Pulmonary
+    3300056: table
+    3300058: Tricuspid
+    4300000: anneBody
+    4300002: IMU board mount
+    4300004: bool annehead_chinOnly_
+    4300006: IMU_head_mount
+    4300008: imgTarget2-1-savePlastic
+    4300010: neck head joint
+    4300012: table
+    4300014: IMU board
+    4300016: bool FinalBody
+    4300018: imgTarget2-1-mount
+    4300020: imgTarget2-1
+    4300022: imgTarget2-2-savePlastic
+    4300024: imgTarget2-2-mount
+    4300026: imgTarget2-2-mount-boolApplied
+    4300028: imgTarget2-2
+    4300030: annehead_chinOnly_noBreathing
+    4300032: Aortic
+    4300034: Mitral
+    4300036: Pulmonary
+    4300038: Tricuspid
+    4300040: anneHead_lipsOnly
+    4300042: imgTargetShoulder-1
+    4300044: imgTargetShoulder-2
+    4300046: imgTargetShoulder-1-saveplastic
+    4300048: imgTargetShoulder-2-saveplastic
+    4300050: imgTargetShoulder-mount
+    4300052: imgTargetShoulder-mount-saveplastic
+    4300054: imgTargetShoulder-mount-1
+    4300056: imgTargetShoulder-mount-2
+    4300058: anne-face
+    10800000: Lamp
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

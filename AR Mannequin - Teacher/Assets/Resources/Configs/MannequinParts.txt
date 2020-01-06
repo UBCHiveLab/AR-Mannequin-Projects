@@ -1,0 +1,4 @@
+body_scar:body_without_scar,body_with_scar
+lips_color:normal-lips,purple-lips
+eyes:normal-eye,dilated-eye
+vomit:vomit-on,vomit-off

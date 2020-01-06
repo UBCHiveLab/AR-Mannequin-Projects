@@ -1,0 +1,15 @@
+{ "name":"string",
+"preset":{ 
+	"left_eye":"string", // normal, dilate, constrict
+	"right_eye":"string", // normal, dilate, constrict
+	"lip_color":"string", // normal, purple
+	"vomit_state":bool, // true false
+	"body_scar":"string", // off, on, bleeding
+
+	"ecg":[0, 0, 0, 0, 0, 0],
+
+	"heart_track":"string", // off, regular
+	"left_lung_track":"string", // off, regular
+	"right_lung_track":"string" // off, regular
+	}
+}

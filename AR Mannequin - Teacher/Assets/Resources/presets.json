@@ -1,0 +1,41 @@
+{
+  "presetList": [
+    {
+      "name": "default",
+      "left_eye": "normal",
+      "right_eye": "normal",
+      "lip_color": "normal",
+      "vomit_state": false,
+      "body_scar": "off",
+      "ecg": [ 85, 120, 80, 97, 16, 36.5 ],
+      "heart_track": "Normal",
+      "left_lung_track": "Normal",
+      "right_lung_track": "Normal"
+    },
+    {
+      "name": "dead",
+      "left_eye": "normal",
+      "right_eye": "normal",
+      "lip_color": "purple",
+      "vomit_state": false,
+      "body_scar": "off",
+      "ecg": [ 0, 0, 0, 0, 0, 36.3 ],
+      "heart_track": "off",
+      "left_lung_track": "off",
+      "right_lung_track": "off"
+    },
+    {
+      "name": "heart_attack",
+      "left_eye": "normal",
+      "right_eye": "normal",
+      "lip_color": "normal",
+      "vomit_state": false,
+      "body_scar": "bleeding",
+      "ecg": [ 110, 160, 100, 97, 16, 36.5 ],
+      "heart_track": "Quiet",
+      "left_lung_track": "Normal",
+      "right_lung_track": "Normal"
+    }
+
+  ]
+}
