@@ -161,6 +161,8 @@ public class NetworkController : MonoBehaviourPunCallbacks
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
         Debug.Log("Could not join room. " + returnCode + ": " + message);
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            SceneManager.LoadScene(0);
         failureText.text = "Could not join room. " + message;
         startButton.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         startButton.gameObject.transform.GetChild(1).gameObject.SetActive(false);

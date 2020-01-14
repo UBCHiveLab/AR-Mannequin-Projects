@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using ExitGames.Client.Photon;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Created by Kimberly Burke, 2019
@@ -146,6 +147,10 @@ public class PhotonReceiver : MonoBehaviour {
             case EventCodeUtility.SKIN_COLOR:
                 Debug.Log("changing skin color");
                 InvokeSkinColorEvent("skin_color", (string)datas[0]);
+                break;
+            case EventCodeUtility.QUIT_SESSION:
+                Debug.Log("Session quit");
+                //SceneManager.LoadScene(0);
                 break;
             default:
                 Debug.Log("Unhandled event code" + obj.ToString());

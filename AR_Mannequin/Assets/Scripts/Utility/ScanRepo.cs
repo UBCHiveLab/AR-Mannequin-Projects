@@ -10,7 +10,7 @@ public static class ScanRepo
 /// beginning of repository for accessing scans information and retrieving image data
 /// </summary>
 
-    enum ScanType { CT, XRAY };
+    enum ScanType { CT, XRAY, ULTRASOUND };
 
     private class Scan
     {
@@ -28,14 +28,17 @@ public static class ScanRepo
     /// THIS LIST NEEDS TO BE THE SAME BETWEEN FACILITATOR AND STUDENT
     /// </summary>
     private static readonly List<Scan> availableScans = new List<Scan>{
-        new Scan(ScanType.CT, "Axial1"),
-        new Scan(ScanType.CT, "Axial2"),
-        new Scan(ScanType.CT, "Axial3"),
-        new Scan(ScanType.CT, "Axial4"),
-        new Scan(ScanType.CT, "Coronal1"),
-        new Scan(ScanType.CT, "Coronal2"),
-        new Scan(ScanType.CT, "Coronal3"),
-        new Scan(ScanType.CT, "Coronal4")
+        new Scan(ScanType.CT, "Meningioma"),
+        new Scan(ScanType.CT, "SAH2"),
+        new Scan(ScanType.CT, "Subdural"),
+        new Scan(ScanType.XRAY, "ARDS"),
+        new Scan(ScanType.XRAY, "Chest Xray Normal"),
+        new Scan(ScanType.XRAY, "Pleural Effusion Pneumothorax"),
+        new Scan(ScanType.XRAY, "Pneumonia-LLL Xray"),
+        new Scan(ScanType.XRAY, "Pneumothorax"),
+        new Scan(ScanType.XRAY, "Tension Pneumothorax"),
+        new Scan(ScanType.ULTRASOUND, "Free Fluid"),
+        new Scan(ScanType.ULTRASOUND, "Fluid Spleen")
     };
 
     /// <summary>

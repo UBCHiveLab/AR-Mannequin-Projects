@@ -31,7 +31,8 @@ public class DropdownControls : MonoBehaviour
 
     public void GetScanDisplay(Dropdown change)
     {
-        ScanRepo.ScanType type = GetComponent<ImageDropdownOptions>().GetScanType();
+        //ScanRepo.ScanType type = GetComponent<ImageDropdownOptions>().GetScanType();
+        ScanRepo.ScanType type = ImageDropdownOptions.type;
         selectedImage = ScanRepo.GetImage(Enum.GetName(typeof(ScanRepo.ScanType), type), change.captionText.text);
         display.sprite = selectedImage;
     }

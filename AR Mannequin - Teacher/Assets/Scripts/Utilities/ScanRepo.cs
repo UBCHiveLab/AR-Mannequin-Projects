@@ -8,9 +8,10 @@ public static class ScanRepo
 /// <summary>
 /// written by Dante Cerron HIVE Lab UBC. 
 /// beginning of repository for accessing scans information and retrieving image data
+/// Adjusted by Silver Xu on Jan 2020
 /// </summary>
 
-    public enum ScanType { CT, XRAY };
+    public enum ScanType { CT, XRAY, ULTRASOUND };
 
     private class Scan
     {
@@ -28,14 +29,17 @@ public static class ScanRepo
     /// THIS LIST NEEDS TO BE THE SAME BETWEEN FACILITATOR AND STUDENT
     /// </summary>
     private static List<Scan> availableScans = new List<Scan>{
-        new Scan(ScanType.CT, "Axial1"),
-        new Scan(ScanType.CT, "Axial2"),
-        new Scan(ScanType.CT, "Axial3"),
-        new Scan(ScanType.CT, "Axial4"),
-        new Scan(ScanType.CT, "Coronal1"),
-        new Scan(ScanType.CT, "Coronal2"),
-        new Scan(ScanType.CT, "Coronal3"),
-        new Scan(ScanType.CT, "Coronal4")
+        new Scan(ScanType.CT, "Meningioma"),
+        new Scan(ScanType.CT, "SAH2"),
+        new Scan(ScanType.CT, "Subdural"),
+        new Scan(ScanType.XRAY, "ARDS"),
+        new Scan(ScanType.XRAY, "Chest Xray Normal"),
+        new Scan(ScanType.XRAY, "Pleural Effusion Pneumothorax"),
+        new Scan(ScanType.XRAY, "Pneumonia-LLL Xray"),
+        new Scan(ScanType.XRAY, "Pneumothorax"),
+        new Scan(ScanType.XRAY, "Tension Pneumothorax"),
+        new Scan(ScanType.ULTRASOUND, "Free Fluid"),
+        new Scan(ScanType.ULTRASOUND, "Fluid Spleen")
     };
 
     /// <summary>
@@ -61,6 +65,7 @@ public static class ScanRepo
         List<string> result = new List<string>();
         foreach(string item in Enum.GetNames(typeof(ScanType)))
         {
+            
             result.Add(item);
         }
 
@@ -81,7 +86,9 @@ public static class ScanRepo
 
         foreach(Scan item in availableScans)
         {
+
             result[item.type].Add(item.name);
+           
         }
 
         return result;

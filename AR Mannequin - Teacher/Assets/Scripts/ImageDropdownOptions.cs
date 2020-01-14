@@ -2,34 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
-[RequireComponent(typeof(Dropdown))]
+//[RequireComponent(typeof(Dropdown))]
 public class ImageDropdownOptions : MonoBehaviour
 {
     //not using image type for further ordering for now
     Dropdown ImageDropdown;
-    [SerializeField] ScanRepo.ScanType type;
+    public static ScanRepo.ScanType type = ScanRepo.ScanType.CT;
+    [SerializeField]
+    private GameObject dropdown;
 
-    void Start()
+    public void ChangeDropDownOption(String buttonType)
     {
-        ImageDropdown = GetComponent<Dropdown>();
+        //Set image type by click on buttons
+        type = (ScanRepo.ScanType)Enum.Parse(typeof(ScanRepo.ScanType), buttonType);
+        ImageDropdown = dropdown.GetComponent<Dropdown>();
+        ImageDropdown.ClearOptions();
+        
         List<Dropdown.OptionData> imageOptions = new List<Dropdown.OptionData>();
         Dictionary<string, List<string>> images = ScanRepo.GetImageLookup();
         imageOptions.Add(new Dropdown.OptionData("None"));
 
-        // Currently only functional for CT scan type images.
-        foreach(List<string> list in images.Values)
+        // Shows options with corresponding type
+        foreach(KeyValuePair<string, List<string>> image in images)
         {
-            foreach(string item in list)
+            if (image.Key == type.ToString())
             {
-                imageOptions.Add(new Dropdown.OptionData(item));
+                foreach(string item in image.Value)
+                {
+                    imageOptions.Add(new Dropdown.OptionData(item));
+                }
             }
         }
         ImageDropdown.AddOptions(imageOptions);
+        //reset dropdown option
+        ImageDropdown.value=0;
     }
+  
 
-    public ScanRepo.ScanType GetScanType()
-    {
-        return type;
-    }
+ 
 }

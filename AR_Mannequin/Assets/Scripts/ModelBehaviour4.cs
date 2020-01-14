@@ -100,6 +100,7 @@ public class ModelBehaviour4 : MonoBehaviour
         {
             unparent();
             ClearImageTargDictionary();
+            //add listener to MainManikin Vuforia Event
             EventManager.Instance.MainManikinVuforiaEvent += OnVuforiaModelEvent;
         } else
         {

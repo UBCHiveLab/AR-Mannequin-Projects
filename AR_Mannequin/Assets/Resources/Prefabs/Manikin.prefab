@@ -7364,11 +7364,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4570075508273568}
     m_Modifications:
-    - target: {fileID: 7928919010134425924, guid: 5f094c19a15a9ce4cac5b44f96295590,
-        type: 3}
-      propertyPath: m_Name
-      value: MonitorUI Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 7928919010134425920, guid: 5f094c19a15a9ce4cac5b44f96295590,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7483,6 +7478,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.000234645
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928919010134425924, guid: 5f094c19a15a9ce4cac5b44f96295590,
+        type: 3}
+      propertyPath: m_Name
+      value: MonitorUI Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 8294793101862369445, guid: 5f094c19a15a9ce4cac5b44f96295590,
         type: 3}

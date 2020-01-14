@@ -39,6 +39,7 @@ public static class EventCodeUtility {
 
     public const byte XRAY_EVENT = 24;
     public const byte CT_EVENT = 25;
+    public const byte ULTRASOUND_EVENT = 31;
 
     public const byte HEARTBEAT_SOURCE = 26;
     public const byte LUNG_L_SOURCE = 27;
@@ -46,4 +47,6 @@ public static class EventCodeUtility {
     public const byte WHITE_NOISE_SOURCE = 29;
 
     public const byte SKIN_COLOR = 30;
+
+
 }
