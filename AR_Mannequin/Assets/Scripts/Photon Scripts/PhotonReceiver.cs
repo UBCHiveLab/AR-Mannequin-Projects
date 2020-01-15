@@ -144,6 +144,10 @@ public class PhotonReceiver : MonoBehaviour {
                 Debug.Log("Showing CT. " + (string)datas[0]);
                 InvokeDisplayImageEvent("CT", (string)datas[0]);
                 break;
+            case EventCodeUtility.ULTRASOUND_EVENT:
+                Debug.Log("Showing ULTRASOUND. " + (string)datas[0]);
+                InvokeDisplayImageEvent("ULTRASOUND", (string)datas[0]);
+                break;
             case EventCodeUtility.SKIN_COLOR:
                 Debug.Log("changing skin color");
                 InvokeSkinColorEvent("skin_color", (string)datas[0]);

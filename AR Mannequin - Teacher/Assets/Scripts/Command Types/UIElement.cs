@@ -51,12 +51,24 @@ public class UIElement : MonoBehaviour
 
     public byte GetEventCode()
     {
+        switch(ImageDropdownOptions.type)
+        {
+            case ScanRepo.ScanType.CT:
+                evCode = 25;
+                break;
+            case ScanRepo.ScanType.XRAY:
+                evCode = 24;
+                break;
+            case ScanRepo.ScanType.ULTRASOUND:
+                evCode = 31;
+                break;
+        }
         return evCode;
     }
 
     private void ApplyCommand()
     {
-        cmd = new Command(evCode, new object[] { newValue });
+        cmd = new Command(GetEventCode(), new object[] { newValue });
         cmdSend.ApplyCommand(cmd); 
     }
 }
