@@ -51,24 +51,21 @@ public class UIElement : MonoBehaviour
 
     public byte GetEventCode()
     {
-        switch(ImageDropdownOptions.type)
-        {
-            case ScanRepo.ScanType.CT:
-                evCode = 25;
-                break;
-            case ScanRepo.ScanType.XRAY:
-                evCode = 24;
-                break;
-            case ScanRepo.ScanType.ULTRASOUND:
-                evCode = 31;
-                break;
-        }
         return evCode;
+    }
+
+    /// <summary>
+    /// Created by Silver Xu, to allow change of event code in case there are multiple events using the same dropdown UI
+    /// </summary>
+    /// <param name="eventCode"></param>
+    public void ChangeEventCode(byte eventCode)
+    {
+        evCode = eventCode;
     }
 
     private void ApplyCommand()
     {
-        cmd = new Command(GetEventCode(), new object[] { newValue });
+        cmd = new Command(evCode, new object[] { newValue });
         cmdSend.ApplyCommand(cmd); 
     }
 }
