@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Video;
 
 public static class ScanRepo
 {
@@ -38,7 +39,9 @@ public static class ScanRepo
         new Scan(ScanType.XRAY, "Pneumothorax"),
         new Scan(ScanType.XRAY, "Tension Pneumothorax"),
         new Scan(ScanType.ULTRASOUND, "Free Fluid"),
-        new Scan(ScanType.ULTRASOUND, "Fluid Spleen")
+        new Scan(ScanType.ULTRASOUND, "Fluid Spleen"),
+        new Scan(ScanType.ULTRASOUND, "Free Fluid Video"),
+        new Scan(ScanType.ULTRASOUND, "Fluid Spleen Video")
     };
 
     /// <summary>
@@ -55,6 +58,18 @@ public static class ScanRepo
         } catch(Exception e)
         {
             Debug.Log("Error getting image for display: " + e.Message);
+            return null;
+        }
+    }
+    public static VideoClip GetVideo(string type,string name)
+    {
+        try
+        {
+            return Resources.Load<VideoClip>("ImageDisplay/" + type + "/" + name);
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Error getting video for display: " + e.Message);
             return null;
         }
     }

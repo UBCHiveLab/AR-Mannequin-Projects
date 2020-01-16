@@ -39,7 +39,9 @@ public static class ScanRepo
         new Scan(ScanType.XRAY, "Pneumothorax"),
         new Scan(ScanType.XRAY, "Tension Pneumothorax"),
         new Scan(ScanType.ULTRASOUND, "Free Fluid"),
-        new Scan(ScanType.ULTRASOUND, "Fluid Spleen")
+        new Scan(ScanType.ULTRASOUND, "Fluid Spleen"),
+        new Scan(ScanType.ULTRASOUND, "Free Fluid Video"),
+        new Scan(ScanType.ULTRASOUND, "Fluid Spleen Video")
     };
 
     /// <summary>
