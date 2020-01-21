@@ -90,6 +90,9 @@ public class EventManager: Singleton<EventManager>{
     public delegate void AudioSourceDelegate(string type, string name);
     public event AudioSourceDelegate AudioSourceEvent;
 
+    public delegate void AudioPlayDelegate(string name,bool status);
+    public event AudioPlayDelegate AudioPlayEvent;
+
     public delegate void SkinColorDelegate(string name, string color);
     public event SkinColorDelegate SkinColorEvent;
 
@@ -295,6 +298,14 @@ public class EventManager: Singleton<EventManager>{
     {
         if(AudioSourceEvent != null) {
             AudioSourceEvent(type, name);
+        }
+    }
+
+    public void publishAudioPlayEvent(string name,bool status)
+    {
+        if (AudioPlayEvent != null)
+        {
+            AudioPlayEvent(name,status);
         }
     }
 

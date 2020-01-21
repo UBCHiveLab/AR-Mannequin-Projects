@@ -61,8 +61,9 @@ public class PhotonReceiver : MonoBehaviour {
                 InvokeToggleEvent("lips_color", (bool)datas[0]);
                 break;
             case EventCodeUtility.VOMIT_TOGGLE:
-                Debug.Log("Toggling vomit animation.");
+                Debug.Log("Toggling vomit animation. Play vomit sound.");
                 EventManager.Instance.publishToggleMeshAnimationEvent("vomit", (bool)datas[0]);
+                EventManager.Instance.publishAudioPlayEvent("vomit", (bool)datas[0]);
                 break;
             case EventCodeUtility.DILATE_TOGGLE_R:
                 Debug.Log("Toggling eye dilation.");

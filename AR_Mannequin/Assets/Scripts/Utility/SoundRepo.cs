@@ -5,7 +5,7 @@ using System;
 
 public class SoundRepo : MonoBehaviour
 {
-    enum SoundType { HEART, LUNG, AMBIENT, MONITOR };
+    enum SoundType { HEART, LUNG, AMBIENT, MONITOR, VOMIT };
 
     private class Sound
     {
@@ -32,7 +32,8 @@ public class SoundRepo : MonoBehaviour
         new Sound(SoundType.MONITOR, "ar-cpr-ekg-sound_deadBeep"),
         new Sound(SoundType.MONITOR, "ar-cpr-ekg-sound_singleBeep"),
         new Sound(SoundType.MONITOR, "ar-cpr-ekg-sound_warningBeep"),
-        new Sound(SoundType.AMBIENT, "hospitalNoise")
+        new Sound(SoundType.AMBIENT, "hospitalNoise"),
+        new Sound(SoundType.VOMIT,"breviceps__gagging-vomit-throwing-up")
     };
     /// <summary>
     /// Beginning of interface for getting images from resources folder

@@ -20,9 +20,15 @@ public class ApplySoundToggle : MonoBehaviour
         EventManager.Instance.AudioToggleEvent += OnAudioToggleEvent;
         EventManager.Instance.AudioSlideEvent += OnAudioSlideEvent;
         EventManager.Instance.AudioSourceEvent += OnAudioSourceEvent;
+        EventManager.Instance.AudioPlayEvent += OnAudioPlayEvent;
         audioSource = GetComponent<AudioSource>();
     }
 
+    /// <summary>
+    /// mute or umute the looped audio
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="status"></param>
     private void OnAudioToggleEvent(string name, bool status)
     {
         if (name == sound)
@@ -31,6 +37,11 @@ public class ApplySoundToggle : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// change audio volume based on silder
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="volume"></param>
     private void OnAudioSlideEvent(string name, float volume)
     {
         if (name == sound)
@@ -38,7 +49,11 @@ public class ApplySoundToggle : MonoBehaviour
             audioSource.volume = volume / 100f;
         }
     }
-
+    /// <summary>
+    /// switch audio source
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="clip"></param>
     private void OnAudioSourceEvent(string name, string clip)
     {
         if (name == sound)
@@ -46,6 +61,27 @@ public class ApplySoundToggle : MonoBehaviour
             Debug.Log("changing audio source to " + clip);
             audioSource.clip = SoundRepo.GetSound(type, clip);
             audioSource.Play();
+        }
+    }
+    /// <summary>
+    /// created by Silver Xu, play audio once when needed
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="status"></param>
+    private void OnAudioPlayEvent(string name,bool status)
+    {
+        if(name == sound)
+        {
+            if (status)
+            {
+                Debug.Log("Play audio source" + name);
+                audioSource.Play();
+            }
+            else
+            {
+                Debug.Log("Stop playing audio source" + name);
+                audioSource.Stop();
+            }
         }
     }
 }
