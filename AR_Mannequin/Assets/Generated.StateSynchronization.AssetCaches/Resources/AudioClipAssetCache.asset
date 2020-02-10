@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c123ab49fdc47469535cccd517e6d3, type: 3}
+  m_Name: AudioClipAssetCache
+  m_EditorClassIdentifier: 
+  assets:
+  - AssetId:
+      guid:
+        m_storage: 18d83379-99fd-0db4-aaf0-414291b037b7
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: 18d8337999fd0db4aaf0414291b037b7, type: 3}
+  - AssetId:
+      guid:
+        m_storage: 1cdf4d02-612a-57c4-4a18-8c7cfec1e4a0
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: 1cdf4d02612a57c44a188c7cfec1e4a0, type: 3}
+  - AssetId:
+      guid:
+        m_storage: 1e6758bd-9d63-c6c4-ea09-d8a9faae1346
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: 1e6758bd9d63c6c4ea09d8a9faae1346, type: 3}
+  - AssetId:
+      guid:
+        m_storage: 269b9f0f-a8c9-30b4-ea7a-e2bf7b250820
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: 269b9f0fa8c930b4ea7ae2bf7b250820, type: 3}
+  - AssetId:
+      guid:
+        m_storage: 3a407e1d-e444-3224-79c4-686f2e07aaad
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: 3a407e1de444322479c4686f2e07aaad, type: 3}
+  - AssetId:
+      guid:
+        m_storage: 512e5b81-f951-b1e4-b9f2-da359c7ac6bc
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: 512e5b81f951b1e4b9f2da359c7ac6bc, type: 3}
+  - AssetId:
+      guid:
+        m_storage: 6bdf46d7-976a-3a94-68ba-e844f5d23a2d
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: 6bdf46d7976a3a9468bae844f5d23a2d, type: 3}
+  - AssetId:
+      guid:
+        m_storage: 7059b8d3-ce23-9df4-a9c7-ff6e85bd1f98
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: 7059b8d3ce239df4a9c7ff6e85bd1f98, type: 3}
+  - AssetId:
+      guid:
+        m_storage: 85b13b88-cc90-2d24-f9da-59b25fa5dabb
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: 85b13b88cc902d24f9da59b25fa5dabb, type: 3}
+  - AssetId:
+      guid:
+        m_storage: 8654d11c-6f26-9c14-8bdf-509ee3fb3321
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: 8654d11c6f269c148bdf509ee3fb3321, type: 3}
+  - AssetId:
+      guid:
+        m_storage: 93a8fcf0-4e23-0804-49ac-19c177efd258
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: 93a8fcf04e23080449ac19c177efd258, type: 3}
+  - AssetId:
+      guid:
+        m_storage: 9423dbe9-381a-1a74-eae6-99ad32794636
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: 9423dbe9381a1a74eae699ad32794636, type: 3}
+  - AssetId:
+      guid:
+        m_storage: a931e438-fedd-4d44-6ab5-aae59d36041c
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: a931e438fedd4d446ab5aae59d36041c, type: 3}
+  - AssetId:
+      guid:
+        m_storage: c689dc93-20e0-3fc4-2a09-032280739b6a
+      fileIdentifier: 8300000
+    Asset: {fileID: 8300000, guid: c689dc9320e03fc42a09032280739b6a, type: 3}
