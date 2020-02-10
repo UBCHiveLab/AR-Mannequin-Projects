@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if Unity_WSA
 using Vuforia;
 
 public class CustomImageTrackableEventHandler : DefaultTrackableEventHandler
@@ -38,3 +39,4 @@ public class CustomImageTrackableEventHandler : DefaultTrackableEventHandler
         EventManager.Instance.publishVuforiaModelEvent(Enum.GetName(typeof(TRACKINGSTATE), TRACKINGSTATE.NO), System.Enum.GetName(typeof(TRACKINGTYPE), TRACKINGTYPE.IMAGE), this.transform.Find("arPosRef"));
     }
 }
+#endif

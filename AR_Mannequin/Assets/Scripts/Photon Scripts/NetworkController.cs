@@ -4,7 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+#if UNITY_WSA
 using Vuforia;
+#endif
 using UnityEngine.SceneManagement;
 
 /// <summary>
@@ -57,7 +59,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
         }
     }
 
-    #region PUN Connection
+#region PUN Connection
     public void ConnectToMaster()
     {
         PhotonNetwork.ConnectUsingSettings(); //Connects to Photon master servers
@@ -105,9 +107,9 @@ public class NetworkController : MonoBehaviourPunCallbacks
         // startButton.interactable = false;
         // roomInput.interactable = false;
     }
-    #endregion
+#endregion
 
-    #region Photon Lobby
+#region Photon Lobby
     public override void OnJoinedLobby()
     {
         base.OnJoinedLobby();
@@ -121,9 +123,9 @@ public class NetworkController : MonoBehaviourPunCallbacks
             JoinRoom();
         }
     }
-    #endregion
+#endregion
 
-    #region Photon Join Room
+#region Photon Join Room
     public void JoinRoom()
     {
         Debug.Log("Room name: " + roomName);
@@ -148,8 +150,10 @@ public class NetworkController : MonoBehaviourPunCallbacks
             // Start up scene building - not called when rejoining from connection lost event
             Instantiate(Resources.Load("Prefabs/SceneBuilder"));
             Instantiate(Resources.Load("Prefabs/SpatialMapping"));
+#if UNITY_WSA
             VuforiaRuntime.Instance.InitVuforia();
             Camera.main.GetComponent<VuforiaBehaviour>().enabled = true;
+#endif
             GameStateUtility.SetRoomName(roomName);
             GameStateUtility.SetJoinedRoomStatus(true);
         }
@@ -175,5 +179,5 @@ public class NetworkController : MonoBehaviourPunCallbacks
             startButton.interactable = true;
         }   
     }
-    #endregion
+#endregion
 }

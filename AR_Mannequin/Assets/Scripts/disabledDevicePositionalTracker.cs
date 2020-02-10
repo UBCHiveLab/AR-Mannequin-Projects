@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_WSA
 using Vuforia;
 
 public class disabledDevicePositionalTracker : MonoBehaviour {
@@ -55,3 +56,4 @@ public class disabledDevicePositionalTracker : MonoBehaviour {
     }
     */
 }
+#endif

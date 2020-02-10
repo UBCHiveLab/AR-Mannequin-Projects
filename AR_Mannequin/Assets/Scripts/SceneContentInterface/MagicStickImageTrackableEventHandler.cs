@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+#if Unity_WSA
 public class MagicStickImageTrackableEventHandler : DefaultTrackableEventHandler
 {
     Collider reference_col;
@@ -32,3 +33,4 @@ public class MagicStickImageTrackableEventHandler : DefaultTrackableEventHandler
         EventManager.Instance.publishGeneralVuforiaEvent("MagicStickRef", false);
     }
 }
+#endif
