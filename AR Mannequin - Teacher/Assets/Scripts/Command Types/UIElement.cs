@@ -16,9 +16,10 @@ public class UIElement : MonoBehaviour
     private CommandSend cmdSend;
     private Command cmd;
 
-    private void OnEnable()
+    private void Start()
     {
         cmdSend = GameObject.FindGameObjectWithTag("Player").GetComponent<CommandSend>();
+        
     }
 
     public void ChangeToggleValue()
@@ -65,7 +66,9 @@ public class UIElement : MonoBehaviour
 
     private void ApplyCommand()
     {
+        
         cmd = new Command(evCode, new object[] { newValue });
+        if(cmdSend!=null)
         cmdSend.ApplyCommand(cmd); 
     }
 }
