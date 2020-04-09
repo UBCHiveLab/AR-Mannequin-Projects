@@ -138,7 +138,9 @@ public class NetworkController : MonoBehaviourPunCallbacks
         }
         PhotonNetwork.JoinRoom(roomName);
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
     public override void OnJoinedRoom() //Callback function for when we successfully create or join a room.
     {
         PhotonNetwork.AutomaticallySyncScene = true;
@@ -146,15 +148,17 @@ public class NetworkController : MonoBehaviourPunCallbacks
         if (!GameStateUtility.GetJoinedRoomStatus())
         {
             // Start up scene building - not called when rejoining from connection lost event
-            Instantiate(Resources.Load("Prefabs/SceneBuilder"));
-            Instantiate(Resources.Load("Prefabs/SpatialMapping"));
-            VuforiaRuntime.Instance.InitVuforia();
-            Camera.main.GetComponent<VuforiaBehaviour>().enabled = true;
+            //Instantiate(Resources.Load("Prefabs/SceneBuilder"));
+            //Instantiate(Resources.Load("Prefabs/SpatialMapping"));
+            //VuforiaRuntime.Instance.InitVuforia();
+            //Camera.main.GetComponent<VuforiaBehaviour>().enabled = true;
             GameStateUtility.SetRoomName(roomName);
             GameStateUtility.SetJoinedRoomStatus(true);
+            //PhotonNetwork.Instantiate("Prefabs/PhotonPlayer", Vector3.zero, Quaternion.identity);
+            SceneManager.LoadScene(1);
         }
-        Destroy(GameObject.Find("Keyboard"));
-        Destroy(GameObject.Find("HomeUIPanel"));
+        //Destroy(GameObject.Find("Keyboard"));
+        //Destroy(GameObject.Find("HomeUIPanel"));
         PhotonNetwork.Instantiate("Prefabs/PhotonPlayer", Vector3.zero, Quaternion.identity);
     }
 

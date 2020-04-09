@@ -19,18 +19,18 @@ MonoBehaviour:
     cameraDeviceModeSetting: -2
     maxSimultaneousImageTargets: 5
     maxSimultaneousObjectTargets: 5
-    useDelayedLoadingObjectTargets: 0
+    useDelayedLoadingObjectTargets: 1
     modelTargetRecoWhileExtendedTracked: 1
     version: 8.3.8
     eulaAcceptedVersions: '{"Values":["7.5","8.0","8.1","8.3","0.0","7.1","7.2"]}'
   digitalEyewear:
     cameraOffset: 0.06
     distortionRenderingLayer: 31
-    eyewearType: 1
+    eyewearType: 0
     stereoFramework: 0
     seeThroughConfiguration: 1
-    viewerName: 
-    viewerManufacturer: 
+    viewerName: Generic Cardboard
+    viewerManufacturer: Vuforia
     useCustomViewer: 0
     customViewer:
       Version: 0

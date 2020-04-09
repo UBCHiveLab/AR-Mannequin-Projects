@@ -23,14 +23,15 @@ public class SceneBuilder : MonoBehaviour {
         SceneTransform stubsss = SceneTransform.Instance;
 
         //Instantiate(Resources.Load("Prefabs/ARCamera"));
-        Object manikin = Instantiate(Resources.Load("Prefabs/Manikin") as GameObject);
-        Object overlay = Instantiate(Resources.Load("Prefabs/OverlayCanvas") as GameObject);
+        //Object manikin = Instantiate(Resources.Load("Prefabs/Manikin") as GameObject);
+        //Object overlay = Instantiate(Resources.Load("Prefabs/OverlayCanvas") as GameObject);
         // Instantiate(Resources.Load("Prefabs/MagicStick"));
         Instantiate(Resources.Load("Prefabs/SoundManager") as GameObject);
         
         //Instantiate(Resources.Load("Prefabs/UIPanel"));
 
         Instantiate(Resources.Load("Prefabs/Initializer") as GameObject);
+        PhotonNetwork.Instantiate("Prefabs/PhotonPlayer", Vector3.zero, Quaternion.identity);
         //Instantiate(Resources.Load("Prefabs/PhotonPlayer"));
     }
 }
