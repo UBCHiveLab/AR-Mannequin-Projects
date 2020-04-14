@@ -19,7 +19,7 @@ MonoBehaviour:
     cameraDeviceModeSetting: -2
     maxSimultaneousImageTargets: 5
     maxSimultaneousObjectTargets: 5
-    useDelayedLoadingObjectTargets: 1
+    useDelayedLoadingObjectTargets: 0
     modelTargetRecoWhileExtendedTracked: 1
     version: 8.3.8
     eulaAcceptedVersions: '{"Values":["7.5","8.0","8.1","8.3","0.0","7.1","7.2"]}'
@@ -56,7 +56,7 @@ MonoBehaviour:
   deviceTracker:
     autoInitTracker: 1
     autoStartTracker: 1
-    arcoreRequirement: 1
+    arcoreRequirement: 2
     trackingMode: 1
     posePrediction: 0
     modelCorrectionMode: 0
