@@ -1459,9 +1459,120 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1714774668560906, guid: 6511b8727e2a8b9438822c424909ba95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781209925044826, guid: 6511b8727e2a8b9438822c424909ba95, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539326659104911896, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792393461845188, guid: 6511b8727e2a8b9438822c424909ba95, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853110122618798, guid: 6511b8727e2a8b9438822c424909ba95, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610259886873698, guid: 6511b8727e2a8b9438822c424909ba95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23634504744500952, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d6e63306ada6ba4bbf82740f8b0cd38, type: 2}
+    - target: {fileID: 23334627322347576, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23447414362176808, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23643690396193778, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23643690396193778, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d6e63306ada6ba4bbf82740f8b0cd38, type: 2}
+    - target: {fileID: 23805606566549876, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4137813578363709237, guid: 6511b8727e2a8b9438822c424909ba95, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6511b8727e2a8b9438822c424909ba95, type: 3}
+--- !u!1 &1737081499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1223078850656938, guid: 6511b8727e2a8b9438822c424909ba95,
+    type: 3}
+  m_PrefabInstance: {fileID: 1737081498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1737081500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1610259886873698, guid: 6511b8727e2a8b9438822c424909ba95,
+    type: 3}
+  m_PrefabInstance: {fileID: 1737081498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1737081501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737081499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411d87cf058cbe44bbce7a8eb1fb45cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1737081502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737081500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc730c85ee61624e8b298576a550927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinName: skin_color
+--- !u!1 &1737081503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1041056072597080, guid: 6511b8727e2a8b9438822c424909ba95,
+    type: 3}
+  m_PrefabInstance: {fileID: 1737081498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1737081504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737081503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc730c85ee61624e8b298576a550927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinName: skin_color
 --- !u!1 &1880242700
 GameObject:
   m_ObjectHideFlags: 0
