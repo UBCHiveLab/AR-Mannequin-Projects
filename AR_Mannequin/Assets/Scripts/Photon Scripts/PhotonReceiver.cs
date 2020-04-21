@@ -18,6 +18,7 @@ public class PhotonReceiver : MonoBehaviour {
 
     private void Start()
     {
+        Debug.Log(Parse.Instance);
         parts = Parse.Instance.SwitchButtons; // gets list of body part game objects
     }
 
@@ -165,7 +166,6 @@ public class PhotonReceiver : MonoBehaviour {
 
     private void InvokeTeacherEvent()
     {
-        Debug.Log(EventManager.Instance);
         EventManager.Instance.publishTeacherPresentEvent();
     }
 

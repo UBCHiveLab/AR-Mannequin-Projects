@@ -7,20 +7,20 @@ public class SceneBuilder : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        this.gameObject.AddComponent<EventManager>();
-        EventManager stub = EventManager.Instance;
+        //this.gameObject.AddComponent<EventManager>();
+        //EventManager stub = EventManager.Instance;
 
-        this.gameObject.AddComponent<Make>();
-        this.gameObject.AddComponent<Parse>();
-        this.gameObject.AddComponent<SceneCollider>();
-        this.gameObject.AddComponent<SceneRenderer>();
-        this.gameObject.AddComponent<SceneTransform>();
+        //this.gameObject.AddComponent<Make>();
+        //this.gameObject.AddComponent<Parse>();
+        //this.gameObject.AddComponent<SceneCollider>();
+        //this.gameObject.AddComponent<SceneRenderer>();
+        //this.gameObject.AddComponent<SceneTransform>();
 
-        Make stubby = Make.Instance;
-        Parse stubbyy = Parse.Instance;
-        SceneCollider stubs = SceneCollider.Instance;
-        SceneRenderer stubss = SceneRenderer.Instance;
-        SceneTransform stubsss = SceneTransform.Instance;
+        //Make stubby = Make.Instance;
+        //Parse stubbyy = Parse.Instance;
+        //SceneCollider stubs = SceneCollider.Instance;
+        //SceneRenderer stubss = SceneRenderer.Instance;
+        //SceneTransform stubsss = SceneTransform.Instance;
 
         //Instantiate(Resources.Load("Prefabs/ARCamera"));
         //Object manikin = Instantiate(Resources.Load("Prefabs/Manikin") as GameObject);
