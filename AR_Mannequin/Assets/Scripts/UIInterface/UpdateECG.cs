@@ -27,9 +27,9 @@ public class UpdateECG : MonoBehaviour
         }
         currentSprite = hrSprites[1];
 
-#if UNITY_EDITOR
-        HandleManikinPositioned(true);
-#endif
+//#if UNITY_EDITOR
+//        HandleManikinPositioned(true);
+//#endif
     }
 
     private void HandleManikinPositioned(bool positioned)
