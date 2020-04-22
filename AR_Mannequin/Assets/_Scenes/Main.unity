@@ -1693,6 +1693,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23572645978686634, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d6e63306ada6ba4bbf82740f8b0cd38, type: 2}
     - target: {fileID: 1952243931742816, guid: 6511b8727e2a8b9438822c424909ba95, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1701,10 +1706,40 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2253172421822696134, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533755208906084424, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278639248265696706, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9160278047964940511, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6539326659104911898, guid: 6511b8727e2a8b9438822c424909ba95,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417472628010630492, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347533381108740378, guid: 6511b8727e2a8b9438822c424909ba95,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4137813578363709237, guid: 6511b8727e2a8b9438822c424909ba95, type: 3}
