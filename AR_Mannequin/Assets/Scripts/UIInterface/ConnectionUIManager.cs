@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Created by Kimberly Burke, 2019
@@ -48,6 +49,7 @@ public class ConnectionUIManager : MonoBehaviourPunCallbacks
     public override void OnDisconnected(DisconnectCause cause)
     {
         statusText.text = "Attempting to reconnect to server...";
+        SceneManager.LoadScene(0);
     }
 
     public override void OnJoinedRoom()
