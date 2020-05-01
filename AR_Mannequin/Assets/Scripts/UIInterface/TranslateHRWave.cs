@@ -9,12 +9,12 @@ public class TranslateHRWave : MonoBehaviour
     void Start()
     {
         background = GameObject.Find("Image back").GetComponent<SpriteRenderer>();
-        this.gameObject.AddComponent<BoxCollider>();
+        //this.gameObject.AddComponent<BoxCollider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.transform.Translate(background.bounds.size.x * Time.deltaTime * HRWave.WaveTranslateSpeed, 0, 0);
+        this.transform.Translate(background.bounds.size.x * Time.deltaTime * HRWaveSpawner.WaveTranslateSpeed, 0, 0);
     }
 }

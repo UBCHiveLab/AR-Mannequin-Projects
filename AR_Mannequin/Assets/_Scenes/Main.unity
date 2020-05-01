@@ -4827,8 +4827,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 92aeae0c2cae5f44583fdafcdf02537d, type: 3}
   spriteContainer: {fileID: 1434546905061665971}
   firstSprite: {fileID: 1347533379372741504}
-  speed: 0.001
-  WaveTranslateSpeed: 12
 --- !u!1 &2867297629348827794
 GameObject:
   m_ObjectHideFlags: 0
@@ -6807,6 +6805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfeb794705aa465096ec134425fef89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaveSpeed: 0.1
   HRWavePrefab: {fileID: 6239110506772041264, guid: 4d699240287bd488f94625bb4f3b3f7a,
     type: 3}
 --- !u!54 &8056829239821994471

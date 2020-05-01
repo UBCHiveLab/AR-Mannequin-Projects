@@ -12,9 +12,9 @@ public class UpdateECG : MonoBehaviour
     [SerializeField] SpriteRenderer firstSprite;
 
     private Vector3 leftmostPosition;
-    private float endBoundary = 4f;
-    [SerializeField] float speed;
-    [SerializeField] float WaveTranslateSpeed=1.0f;
+    //private float endBoundary = 4f;
+    //[SerializeField] float speed;
+
     private float bpm;
     public static Sprite currentSprite;
     public static bool isARPlaced;
@@ -27,11 +27,9 @@ public class UpdateECG : MonoBehaviour
             EventManager.Instance.ECGUpdateEvent += UpdateECGValues;
             EventManager.Instance.ManikinPositionedEvent += HandleManikinPositioned;
         }
-        currentSprite = hrSprites[1];
+        //initial bpm is 85, so the sprite is displaying hrwave 80
+        currentSprite = hrSprites[4];
 
-//#if UNITY_EDITOR
-//        HandleManikinPositioned(true);
-//#endif
     }
 
     private void HandleManikinPositioned(bool positioned)
@@ -74,26 +72,31 @@ public class UpdateECG : MonoBehaviour
             if (bpm > speed)
             {
                 currentSprite = currSprite;
-            }
-        }
-    }
 
-    public IEnumerator AnimateWave(GameObject wave)
-    {
-        while(true)
-        {
-            wave.transform.Translate(new Vector3(speed, 0, 0));
-            //wave.transform.Translate(wave.)
-            if (SpriteLocalCorners(firstSprite)[0].x >= leftmostPosition.x)
-            {
-                GameObject newSprite = Instantiate(firstSprite.gameObject, spriteContainer.transform);
-                newSprite.transform.Translate(-firstSprite.bounds.size.x * WaveTranslateSpeed, 0, 0); /// maybe that 1.2f should be a parameter, but im not sure how to generalize
-                newSprite.GetComponent<SpriteRenderer>().sprite = currentSprite;
-                firstSprite = newSprite.GetComponent<SpriteRenderer>();
             }
-            yield return null;
         }
     }
+    /// <summary>
+    /// Old wave animation function, not using anymore
+    /// </summary>
+    /// <returns>The wave.</returns>
+    /// <param name="wave">Wave.</param>
+    //public IEnumerator AnimateWave(GameObject wave)
+    //{
+    //    while(true)
+    //    {
+    //        wave.transform.Translate(new Vector3(speed, 0, 0));
+    //        //wave.transform.Translate(wave.)
+    //        if (SpriteLocalCorners(firstSprite)[0].x >= leftmostPosition.x)
+    //        {
+    //            GameObject newSprite = Instantiate(firstSprite.gameObject, spriteContainer.transform);
+    //            newSprite.transform.Translate(-firstSprite.bounds.size.x * WaveTranslateSpeed, 0, 0); /// maybe that 1.2f should be a parameter, but im not sure how to generalize
+    //            newSprite.GetComponent<SpriteRenderer>().sprite = currentSprite;
+    //            firstSprite = newSprite.GetComponent<SpriteRenderer>();
+    //        }
+    //        yield return null;
+    //    }
+    //}
 
 
     /// <summary>
