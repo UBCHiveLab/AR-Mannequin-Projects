@@ -14,8 +14,10 @@ public class UpdateECG : MonoBehaviour
     private Vector3 leftmostPosition;
     private float endBoundary = 4f;
     [SerializeField] float speed;
+    [SerializeField] float WaveTranslateSpeed=1.0f;
     private float bpm;
-    private Sprite currentSprite;
+    public static Sprite currentSprite;
+    public static bool isARPlaced;
 
     // Start is called before the first frame update
     void Awake()
@@ -34,14 +36,15 @@ public class UpdateECG : MonoBehaviour
 
     private void HandleManikinPositioned(bool positioned)
     {
-        if(positioned)
-        {
-            CaptureLeftMostSpritePosition();
-            StartCoroutine(AnimateWave(spriteContainer));
-        } else
-        {
-            StopCoroutine(AnimateWave(spriteContainer));
-        }
+        //if(positioned)
+        //{
+        //    CaptureLeftMostSpritePosition();
+        //    StartCoroutine(AnimateWave(spriteContainer));
+        //} else
+        //{
+        //    StopCoroutine(AnimateWave(spriteContainer));
+        //}
+        isARPlaced = positioned;
     }
 
     private void CaptureLeftMostSpritePosition()
@@ -66,6 +69,7 @@ public class UpdateECG : MonoBehaviour
         currentSprite = hrSprites[0]; 
         foreach (Sprite currSprite in hrSprites)
         {
+            //speed equals the digit in currentSprite name
             int speed = int.Parse(Regex.Replace(currSprite.name, "[^0-9]", ""));
             if (bpm > speed)
             {
@@ -79,10 +83,11 @@ public class UpdateECG : MonoBehaviour
         while(true)
         {
             wave.transform.Translate(new Vector3(speed, 0, 0));
+            //wave.transform.Translate(wave.)
             if (SpriteLocalCorners(firstSprite)[0].x >= leftmostPosition.x)
             {
                 GameObject newSprite = Instantiate(firstSprite.gameObject, spriteContainer.transform);
-                newSprite.transform.Translate(-firstSprite.bounds.size.x * 1.2f, 0, 0); /// maybe that 1.2f should be a parameter, but im not sure how to generalize
+                newSprite.transform.Translate(-firstSprite.bounds.size.x * WaveTranslateSpeed, 0, 0); /// maybe that 1.2f should be a parameter, but im not sure how to generalize
                 newSprite.GetComponent<SpriteRenderer>().sprite = currentSprite;
                 firstSprite = newSprite.GetComponent<SpriteRenderer>();
             }
