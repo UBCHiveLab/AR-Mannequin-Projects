@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
-
+/// <summary>
+/// Apply eye animation.
+/// Modified by Silver Xu 2020, to replace the old animating method to reduce memory overflow issue
+/// </summary>
 public class ApplyEyeAnimation : MonoBehaviour {
 
     //attached to Manikin/body-assembly/Eye
 
-    Image right;
-    Image left;
-    List<Sprite> frames;
+   
+    [SerializeField] Animator leftEye, rightEye;
 
     float totalTime = 3f; // in seconds
     bool dilateState = false; // false = small/constricted eyes, true = big/dilated eyes
@@ -20,60 +22,41 @@ public class ApplyEyeAnimation : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         Debug.Log("init eye animation");
-        right = GameObject.Find("Right").gameObject.GetComponent<Image>(); // TODO clearer naming
-        left = GameObject.Find("Left").gameObject.GetComponent<Image>();
-        Debug.Log("found eye images");
-        frames = Resources.LoadAll<Sprite>("EyeFrames").ToList();
-        Debug.Log("added eye frames 1-98");
-        //EventManager.Instance.InteractionAnimationEvent += OnInteractionAnimationEvent;
-        //EventManager.Instance.publishInteractionAnimationEvent("", 0f);
+
         EventManager.Instance.ToggleAnimationEvent += OnToggleAnimationEvent;
-        Debug.Log("done init");
+
     }
 
-    private void OnInteractionAnimationEvent(string name, float frame)
-    {
-        //TODO do something with name and frame
-        Debug.Log("called eye animation");
-        StartCoroutine("AnimateEyes");
-    }
+
 
     private void OnToggleAnimationEvent(string name, bool status)
     {
         if (name.Contains("dilate") || name.Contains("constrict"))
         {
             Debug.Log("Called eye animation");
-            StartCoroutine(AnimateEyes(name, status));
+
+            string[] arr = name.Split('_');
+            Debug.Log("eye:"+arr[1]);
+            if (arr[1] == "left")
+            {
+                DisplayEyeAnimation(leftEye, arr[0], status);
+            }
+            else if (arr[1] == "right")
+            {
+                DisplayEyeAnimation(rightEye, arr[0], status);
+            }
         }
     }
-
-    // right now it just goes from big to small
-    IEnumerator AnimateEyes(string name, bool toggle)
+    private void DisplayEyeAnimation(Animator eye,string animationType,bool status)
     {
-        dilateState = toggle;
-        Debug.Log("animate eyes, cur state: " + dilateState);
-
-        if (dilateState)
-        {
-            for (int i = 0; i < frames.Count; i++)
-            {
-                Debug.Log("eye frame: " + i);
-                if (name.Contains("right")) { right.sprite = frames[i]; }
-                else if (name.Contains("left")) { left.sprite = frames[i]; }
-
-                yield return new WaitForSeconds(totalTime / (float)frames.Count);
-            }
-        } else
-        {
-            for (int i = frames.Count - 1; i > -1; i--)
-            {
-                Debug.Log("eye frame: " + i);
-                if (name.Contains("right")) { right.sprite = frames[i]; }
-                else if (name.Contains("left")) { left.sprite = frames[i]; }
-
-                yield return new WaitForSeconds(totalTime / (float)frames.Count);
-            }
-        }
-        yield return null;
+        string animationDirection;
+        if (status)
+            animationDirection = "forward";
+        else
+            animationDirection = "backward";
+        
+        eye.Play(animationType + '_' + animationDirection);
     }
+
+
 }
