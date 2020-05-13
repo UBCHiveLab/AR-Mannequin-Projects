@@ -18,7 +18,7 @@ public static class EventCodeUtility
     public const byte VOMIT_TOGGLE = 8;
     public const byte WHITE_NOISE_SLIDE = 9;
 
-    // missing 10
+    public const byte ECG_TOGGLE = 10;
 
     public const byte ECG_SOUND_TOGGLE = 11;
     public const byte SLIDE_EVENT = 12;
