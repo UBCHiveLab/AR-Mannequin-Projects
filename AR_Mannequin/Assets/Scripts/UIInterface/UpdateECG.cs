@@ -28,7 +28,7 @@ public class UpdateECG : MonoBehaviour
             EventManager.Instance.ManikinPositionedEvent += HandleManikinPositioned;
         }
         //initial bpm is 85, so the sprite is displaying hrwave 80
-        currentSprite = hrSprites[4];
+        //currentSprite = hrSprites[4];
 
     }
 

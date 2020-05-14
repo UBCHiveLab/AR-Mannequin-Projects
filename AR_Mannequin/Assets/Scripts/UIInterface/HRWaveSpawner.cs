@@ -33,6 +33,7 @@ public class HRWaveSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (UpdateECG.isARPlaced)
         {
             //initialize the first wave
