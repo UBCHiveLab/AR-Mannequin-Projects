@@ -158,6 +158,9 @@ public class PhotonReceiver : MonoBehaviour {
                 Debug.Log("Session quit");
                 //SceneManager.LoadScene(0);
                 break;
+            case EventCodeUtility.ECG_TOGGLE:
+                InvokeECGHookUp((bool)datas[0]);
+                break;
             default:
                 Debug.Log("Unhandled event code" + obj.ToString());
                 break;
@@ -214,5 +217,9 @@ public class PhotonReceiver : MonoBehaviour {
     private void InvokeSkinColorEvent(string name, string color)
     {
         EventManager.Instance.publishSkinColorEvent(name, color);
+    }
+    private void InvokeECGHookUp(bool status)
+    {
+        EventManager.Instance.publishECGHookUpEvent(status);
     }
 }

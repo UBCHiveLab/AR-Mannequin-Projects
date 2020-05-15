@@ -22,6 +22,9 @@ public class ApplySoundToggle : MonoBehaviour
         EventManager.Instance.AudioSourceEvent += OnAudioSourceEvent;
         EventManager.Instance.AudioPlayEvent += OnAudioPlayEvent;
         audioSource = GetComponent<AudioSource>();
+
+        //mute all sound on begining
+        OnAudioToggleEvent(sound, true);
     }
 
     /// <summary>

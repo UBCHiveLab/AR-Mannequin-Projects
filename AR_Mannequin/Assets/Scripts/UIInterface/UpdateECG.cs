@@ -10,6 +10,7 @@ public class UpdateECG : MonoBehaviour
     [SerializeField] Sprite[] hrSprites;
     [SerializeField] GameObject spriteContainer;
     [SerializeField] SpriteRenderer firstSprite;
+    [SerializeField] GameObject HRWaveSpawner;
 
     private Vector3 leftmostPosition;
     //private float endBoundary = 4f;
@@ -18,17 +19,21 @@ public class UpdateECG : MonoBehaviour
     private float bpm;
     public static Sprite currentSprite;
     public static bool isARPlaced;
+    public static bool isECGHookedUp;
 
     // Start is called before the first frame update
     void Awake()
     {
         if (EventManager.Instance != null)
         {
+            EventManager.Instance.ECGHookUpEvent += ECGHookUp;
             EventManager.Instance.ECGUpdateEvent += UpdateECGValues;
             EventManager.Instance.ManikinPositionedEvent += HandleManikinPositioned;
         }
         //initial bpm is 85, so the sprite is displaying hrwave 80
         //currentSprite = hrSprites[4];
+        //set value to -?- before using vitals
+        valueText[0].text = "-?-";
 
     }
 
@@ -45,12 +50,7 @@ public class UpdateECG : MonoBehaviour
         isARPlaced = positioned;
     }
 
-    private void CaptureLeftMostSpritePosition()
-    {
-        //leftmost sprite position in container coordinates
-        leftmostPosition = SpriteLocalCorners(firstSprite)[0];
-        Debug.Log("letmost: " + leftmostPosition.x);
-    }
+
 
     private void UpdateECGValues(float[] values)
     {
@@ -59,6 +59,7 @@ public class UpdateECG : MonoBehaviour
             valueText[i].text = values[i].ToString();
         }
         bpm = values[0];
+        if(isECGHookedUp)
         ChangeHRWave();
     }
 
@@ -75,6 +76,11 @@ public class UpdateECG : MonoBehaviour
 
             }
         }
+    }
+    private void ECGHookUp(bool status)
+    {
+        isECGHookedUp = status;
+        HRWaveSpawner.SetActive(status);
     }
     /// <summary>
     /// Old wave animation function, not using anymore
@@ -98,21 +104,27 @@ public class UpdateECG : MonoBehaviour
     //    }
     //}
 
+    //private void CaptureLeftMostSpritePosition()
+    //{
+    //    //leftmost sprite position in container coordinates
+    //    leftmostPosition = SpriteLocalCorners(firstSprite)[0];
+    //    Debug.Log("letmost: " + leftmostPosition.x);
+    //}
 
     /// <summary>
     /// found at: https://answers.unity.com/questions/641006/is-there-a-way-to-get-a-sprites-current-widthheigh.html
     /// </summary>
     /// <param name="sp">any Sprite, in this case, the sprite used for HR wave pattern</param>
     /// <returns>array of vector3 where [0] is top left corner of sprite in world coords, [1] is bottom right corner</returns>
-    Vector3[] SpriteLocalCorners(SpriteRenderer sp)
-    {
-        Vector3 pos = sp.bounds.center;
-        //Debug.Log("sprite center: " + pos.ToString("F4") + " sprite extents: " + sp.transform.TransformVector(sp.sprite.bounds.extents).ToString("F4"));
-        Vector3[] array = new Vector3[2];
-        //top left
-        array[0] = pos - sp.transform.TransformVector((sp.sprite.bounds.extents));
-        // Bottom right
-        array[1] = pos + sp.transform.TransformVector((sp.sprite.bounds.extents));
-        return array;
-    }
+    //Vector3[] SpriteLocalCorners(SpriteRenderer sp)
+    //{
+    //    Vector3 pos = sp.bounds.center;
+    //    //Debug.Log("sprite center: " + pos.ToString("F4") + " sprite extents: " + sp.transform.TransformVector(sp.sprite.bounds.extents).ToString("F4"));
+    //    Vector3[] array = new Vector3[2];
+    //    //top left
+    //    array[0] = pos - sp.transform.TransformVector((sp.sprite.bounds.extents));
+    //    // Bottom right
+    //    array[1] = pos + sp.transform.TransformVector((sp.sprite.bounds.extents));
+    //    return array;
+    //}
 }

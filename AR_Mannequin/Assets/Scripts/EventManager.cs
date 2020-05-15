@@ -96,6 +96,9 @@ public class EventManager: Singleton<EventManager>{
     public delegate void SkinColorDelegate(string name, string color);
     public event SkinColorDelegate SkinColorEvent;
 
+    public delegate void ECGHookUpDelegate(bool status);
+    public event ECGHookUpDelegate ECGHookUpEvent;
+
     public void publishVuforiaModelEvent(string foundOrLost, string modelType, Transform parentTransform)
     {
         Debug.Log("publish vuforia model event");
@@ -315,6 +318,15 @@ public class EventManager: Singleton<EventManager>{
         {
             Debug.Log("calling skin color event");
             SkinColorEvent(name, color);
+        }
+    }
+
+    public void publishECGHookUpEvent(bool status)
+    {
+        if (ECGHookUpEvent != null)
+        {
+            Debug.Log("ECG Hook Up status: " + status.ToString());
+            ECGHookUpEvent(status);
         }
     }
 }
