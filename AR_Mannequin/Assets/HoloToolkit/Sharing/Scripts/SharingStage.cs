@@ -11,7 +11,7 @@ namespace HoloToolkit.Sharing
     /// <summary>
     /// The SharingStage is in charge of managing the core networking layer for the application.
     /// </summary>
-    public class SharingStage : Singleton<SharingStage>
+    public class SharingStage : HoloToolkit.Unity.Singleton<SharingStage>
     {
         /// <summary> 
         /// SharingManagerConnected event notifies when the sharing manager is created and connected.
@@ -222,8 +222,9 @@ namespace HoloToolkit.Sharing
 
         #region Unity Methods
 
-         void Awake()
+        protected override void Awake()
         {
+            base.Awake();
 
             AppInstanceUniqueId = Guid.NewGuid().ToString();
             logWriter = new ConsoleLogWriter { ShowDetailedLogs = ShowDetailedLogs };
@@ -262,7 +263,7 @@ namespace HoloToolkit.Sharing
             Application.logMessageReceived -= OnLogReceived;
         }
 
-         void OnDestroy()
+        protected override void OnDestroy()
         {
             if (discoveryClient != null)
             {

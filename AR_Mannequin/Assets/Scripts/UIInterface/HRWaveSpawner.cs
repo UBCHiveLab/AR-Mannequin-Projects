@@ -45,11 +45,17 @@ public class HRWaveSpawner : MonoBehaviour
                 //update the wave sprite
                 sprite.sprite = UpdateECG.currentSprite;
                 //every hr wave sprite has different width, adjust the box collider size to the corresponding width
+                if (box != null)
                 box.size = new Vector3(sprite.sprite.bounds.size.x, box.size.y, box.size.z);
                 currentWave.GetComponent<BoxCollider>().size = box.size;
                 isInit = false;
             }
         }
+    }
+    private void OnEnable()
+    {
+        //set the spawner to initial a new wave everytime it's been initialed
+        isInit = true;
     }
     private void OnTriggerExit(Collider collision)
     {

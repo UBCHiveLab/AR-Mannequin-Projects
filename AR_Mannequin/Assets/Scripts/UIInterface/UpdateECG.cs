@@ -4,6 +4,8 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
 public class UpdateECG : MonoBehaviour
 {
     [SerializeField] Text[] valueText;
@@ -21,6 +23,8 @@ public class UpdateECG : MonoBehaviour
     public static bool isARPlaced;
     public static bool isECGHookedUp;
 
+    private const string defaultInactiveValue = "-?-";
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -32,9 +36,10 @@ public class UpdateECG : MonoBehaviour
         }
         //initial bpm is 85, so the sprite is displaying hrwave 80
         //currentSprite = hrSprites[4];
-        //set value to -?- before using vitals
-        valueText[0].text = "-?-";
-
+        //set initial values
+        valueText[0].text = defaultInactiveValue;
+        currentSprite = hrSprites[4];
+        bpm = 85;
     }
 
     private void HandleManikinPositioned(bool positioned)
@@ -81,6 +86,14 @@ public class UpdateECG : MonoBehaviour
     {
         isECGHookedUp = status;
         HRWaveSpawner.SetActive(status);
+        //temp place holder, eventually server should decide the initial value
+        if (status)
+        {
+            valueText[0].text = bpm.ToString();
+            ChangeHRWave();
+        }
+        else
+            valueText[0].text = defaultInactiveValue;
     }
     /// <summary>
     /// Old wave animation function, not using anymore
