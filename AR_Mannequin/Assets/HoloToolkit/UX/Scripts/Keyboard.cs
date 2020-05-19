@@ -227,9 +227,9 @@ namespace HoloToolkit.UI.Keyboard
         /// <summary>
         /// Deactivate on Awake.
         /// </summary>
-        protected override void Awake()
+        void Awake()
         {
-            base.Awake();
+
 
             m_StartingScale = transform.localScale;
             Bounds canvasBounds = RectTransformUtility.CalculateRelativeRectTransformBounds(transform);
@@ -365,13 +365,13 @@ namespace HoloToolkit.UI.Keyboard
         /// <summary>
         /// Destroy unmanaged memory links.
         /// </summary>
-        protected override void OnDestroy()
+         void OnDestroy()
         {
             if (IsMicrophoneActive())
             {
                 StartCoroutine(DictationInputManager.StopRecording());
             }
-            base.OnDestroy();
+
         }
 
         #region Present Functions

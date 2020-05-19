@@ -8,9 +8,8 @@ public class SceneOrganInterface : Singleton<SceneOrganInterface>
     List<GameObject> organs = new List<GameObject>();
 
     // Use this for initialization
-    protected override void Awake()
+     void Awake()
     {
-        base.Awake();
 
         organs.Add(GameObject.Find("Pulmonary"));
         organs.Add(GameObject.Find("Tricuspid"));

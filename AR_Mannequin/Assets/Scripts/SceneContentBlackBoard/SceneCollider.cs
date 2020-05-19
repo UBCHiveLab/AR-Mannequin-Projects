@@ -2,16 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using HoloToolkit.Unity;
 
 public class SceneCollider: Singleton<SceneCollider>
 {
 
     private Dictionary<string, Collider> dict = new Dictionary<string, Collider>();
 
-    protected override void Awake()
+    void Awake()
     {
-        base.Awake();
         EventManager.Instance.SetSceneColliderEvent += OnSetSceneColliderEvent;
     }
 

@@ -10,9 +10,8 @@ public class ApplyStethoscopeOpacity: Singleton<ApplyStethoscopeOpacity> {
     Transform magicStickRef;
     Renderer[] stethoscopeRenderers;
 
-    protected override void Awake()
+     void Awake()
     {
-        base.Awake();
         EventManager.Instance.InteractionOpacityEvent += OnInteractionOpacityEvent;
     }
 

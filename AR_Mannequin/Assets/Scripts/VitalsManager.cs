@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using HoloToolkit.Unity;
 
 public enum Vitals{
 
@@ -26,9 +25,9 @@ public class VitalsManager : Singleton<VitalsManager>
     List<VitalsController> vitalsControllerList;
 
 
-    protected override void Awake()
+    void Awake()
     {
-        base.Awake();
+
         vitalsControllerList = GetComponentsInChildren<VitalsController>().ToList();
         TurnOffAllVitalUI();
     }

@@ -20,9 +20,9 @@ public class SortStethoscopeAndOrganSounds: Singleton<SortStethoscopeAndOrganSou
     Vector3 prevRotation = Vector3.zero;
     float rotationThreshold = 1f; //deg
 
-    protected override void Awake()
+     void Awake()
     {
-        base.Awake();
+
         EventManager.Instance.GeneralVuforiaEvent += OnGeneralVuforiaEvent;
         EventManager.Instance.TriggerEnterEvent += OnTriggerEnterEvent;
         EventManager.Instance.TriggerExitEvent += OnTriggerExitEvent;

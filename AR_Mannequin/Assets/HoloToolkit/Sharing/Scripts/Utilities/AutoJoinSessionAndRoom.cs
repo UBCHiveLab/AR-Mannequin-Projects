@@ -63,7 +63,7 @@ namespace HoloToolkit.Sharing.Utilities
             }
         }
 
-        protected override void OnDestroy()
+        void OnDestroy()
         {
             if (SharingStage.Instance != null)
             {
@@ -73,7 +73,7 @@ namespace HoloToolkit.Sharing.Utilities
 
             StopCoroutine(AutoConnect());
 
-            base.OnDestroy();
+           
         }
 
         /// <summary>

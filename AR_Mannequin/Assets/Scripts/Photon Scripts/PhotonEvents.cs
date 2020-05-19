@@ -8,54 +8,29 @@ using ExitGames.Client.Photon;
 
 /// <summary>
 /// Created by Kimberly Burke, 2019
+/// Originally used in server side
+/// Modified by Silver Xu for student side app sending message to other clients
 /// 
 /// Raise Event Options Documentation:
 /// https://doc-api.photonengine.com/en/pun/v2/class_photon_1_1_realtime_1_1_raise_event_options.html
+/// https://doc.photonengine.com/en-us/pun/v2/gameplay/rpcsandraiseevent
 /// </summary>
-public class PhotonEvents : MonoBehaviourPunCallbacks
+public class PhotonEvents :MonoBehaviourPunCallbacks
 {
-    [SerializeField] FacilitatorControls teacherControls;
+    //[SerializeField] FacilitatorControls teacherControls;
 
     private byte evCode;
     private object[] content;
     SendOptions sendOptions = new SendOptions { Reliability = true};
-    RaiseEventOptions raiseEventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.Others };
+    // ReceiverGroup set to All, so sender will also receive this event
+    RaiseEventOptions raiseEventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.All };
 
     Dictionary<string, List<string>> partGroups;
 
     Dictionary<byte, bool> toggleEvent = new Dictionary<byte, bool>();
     Dictionary<byte, float> sliderEvents = new Dictionary<byte, float>();
 
-    private void Start()
-    {
-        toggleEvent.Add(EventCodeUtility.BODY_SCAR_TOGGLE, false);
-        toggleEvent.Add(EventCodeUtility.PURPLE_TOGGLE, false);
-        toggleEvent.Add(EventCodeUtility.VOMIT_TOGGLE, false);
-        toggleEvent.Add(EventCodeUtility.BLEED_TOGGLE, false);
-        toggleEvent.Add(EventCodeUtility.WHITE_NOISE_TOGGLE, false);
-        toggleEvent.Add(EventCodeUtility.HEARTBEAT_TOGGLE, true);
-        toggleEvent.Add(EventCodeUtility.LUNG_L_TOGGLE, true);
-        toggleEvent.Add(EventCodeUtility.LUNG_R_TOGGLE, true);
-        toggleEvent.Add(EventCodeUtility.DILATE_TOGGLE_L, false);
-        toggleEvent.Add(EventCodeUtility.CONSTRICT_TOGGLE_L, false);
-        toggleEvent.Add(EventCodeUtility.DILATE_TOGGLE_R, false);
-        toggleEvent.Add(EventCodeUtility.CONSTRICT_TOGGLE_R, false);
-        toggleEvent.Add(EventCodeUtility.ECG_SOUND_TOGGLE, false);
-    }
-
-    /* public void TestMessage()
-    {
-        evCode = EventCodeUtility.TEST_MESSAGE;
-        content = new object[] { "This should work please..." };
-        CallRaisedEvent();
-    } */
-
-    public void TeacherPresentEvent()
-    {
-        evCode = EventCodeUtility.TEACHER_PRESENT;
-        content = new object[] { };
-        CallRaisedEvent();
-    }
+   
 
     /// <summary>
     /// DEPRECATED - called by toggle buttons

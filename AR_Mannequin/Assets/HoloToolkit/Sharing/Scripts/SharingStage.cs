@@ -222,9 +222,8 @@ namespace HoloToolkit.Sharing
 
         #region Unity Methods
 
-        protected override void Awake()
+         void Awake()
         {
-            base.Awake();
 
             AppInstanceUniqueId = Guid.NewGuid().ToString();
             logWriter = new ConsoleLogWriter { ShowDetailedLogs = ShowDetailedLogs };
@@ -263,7 +262,7 @@ namespace HoloToolkit.Sharing
             Application.logMessageReceived -= OnLogReceived;
         }
 
-        protected override void OnDestroy()
+         void OnDestroy()
         {
             if (discoveryClient != null)
             {

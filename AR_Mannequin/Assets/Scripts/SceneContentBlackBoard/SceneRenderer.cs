@@ -1,16 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using HoloToolkit.Unity;
 
 public class SceneRenderer: Singleton<SceneRenderer>
 {
     private Dictionary<string, Renderer> dict = new Dictionary<string, Renderer>();
 
     // Use this for initialization
-    protected override void Awake()
+     void Awake()
     {
-        base.Awake();
         EventManager.Instance.SetSceneRendererEvent += OnSetSceneRendererEvent;
     }
 

@@ -16,7 +16,7 @@ public class ApplyOrganSound : Singleton<ApplyOrganSound>
     TextMesh volMesh;
 
     // Use this for initialization
-    protected override void Awake()
+    void Awake()
     {
         EventManager.Instance.InteractionAudioEvent += OnInteractionAudioEvent;
     }

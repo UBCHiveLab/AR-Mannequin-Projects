@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using HoloToolkit.Unity;
 using System;
 
 public class ApplyIMUUpdate : Singleton<ApplyIMUUpdate>
@@ -11,9 +10,8 @@ public class ApplyIMUUpdate : Singleton<ApplyIMUUpdate>
     Transform objectTransform;
     //Renderer objectRenderer;
 
-    protected override void Awake()
+    void Awake()
     {
-        base.Awake();
         EventManager.Instance.IMUTransformUpdateEvent += OnIMUTransformUpdateEvent;
     }
 

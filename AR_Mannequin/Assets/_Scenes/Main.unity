@@ -415,7 +415,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 231714862}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &231714862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5428,6 +5439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 855433673535263207}
+  - component: {fileID: 1434546905061665972}
   m_Layer: 5
   m_Name: HRWave
   m_TagString: Untagged
@@ -5435,6 +5447,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1434546905061665972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434546905061665971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248f8fca544b849088952f06823bd039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1507250457858703113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6694,6 +6718,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 92aeae0c2cae5f44583fdafcdf02537d, type: 3}
   spriteContainer: {fileID: 1434546905061665971}
   firstSprite: {fileID: 1347533379372741504}
+  HRWaveSpawner: {fileID: 0}
 --- !u!1 &2867297629348827794
 GameObject:
   m_ObjectHideFlags: 0
@@ -6712,7 +6737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &2938232782838957303
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7068,7 +7093,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6bdf46d7976a3a9468bae844f5d23a2d, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -7198,7 +7223,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c689dc9320e03fc42a09032280739b6a, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -7915,7 +7940,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c689dc9320e03fc42a09032280739b6a, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
