@@ -23,13 +23,13 @@ public class LockButtonHandler : MonoBehaviour
         Image img = transform.Find("Image").GetComponent<Image>();
         ColorBlock colors = GetComponent<Button>().colors;
         Color32 unpressed = new Color32(255,255,255,255);
+        Color32 locked = new Color32(255,0,0,100);
         if (isItLocked == false)
         {   
             isItLocked = true;
             //txt.text = "Locked";
-            colors.normalColor = Color.red;
-            colors.highlightedColor = Color.red;
-            colors.pressedColor = Color.green;
+            colors.normalColor = locked;
+            colors.highlightedColor = locked;
             button.colors = colors;
             img.sprite = lockedSprite;
             scaleScript.enabled = false;
@@ -41,7 +41,6 @@ public class LockButtonHandler : MonoBehaviour
             //txt.text = "Unlocked";
             colors.normalColor = unpressed;
             colors.highlightedColor = unpressed;
-            colors.pressedColor = Color.green;
             button.colors = colors;
             img.sprite = unlockedSprite;
             scaleScript.enabled = true;
