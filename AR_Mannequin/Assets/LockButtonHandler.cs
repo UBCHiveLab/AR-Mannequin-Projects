@@ -8,6 +8,7 @@ public class LockButtonHandler : MonoBehaviour
     public Button button;
     public Sprite lockedSprite;
     public Sprite unlockedSprite;
+    public GameObject planeFinder;
     public Lean.Touch.LeanPinchScale scaleScript;
     public Lean.Touch.LeanDragTranslate dragScript;
     bool isItLocked = false;
@@ -34,6 +35,8 @@ public class LockButtonHandler : MonoBehaviour
             img.sprite = lockedSprite;
             scaleScript.enabled = false;
             dragScript.enabled = false;
+            planeFinder.SetActive(false);
+
         }
         else
         {
