@@ -36,6 +36,7 @@ public class HRWaveSpawner : MonoBehaviour
 
         if (UpdateECG.isARPlaced)
         {
+            Debug.Log(UpdateECG.isARPlaced);
             //initialize the first wave
             if (isInit)
             {
