@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using HoloToolkit.Unity;
 using UnityEngine;
 
 public class InitializeAllInstances : MonoBehaviour {

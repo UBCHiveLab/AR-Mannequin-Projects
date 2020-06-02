@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using HoloToolkit.Unity;
 using UnityEngine.UI;
 
 public class ApplyOrganSound : Singleton<ApplyOrganSound>
