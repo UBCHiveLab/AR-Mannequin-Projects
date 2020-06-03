@@ -19,10 +19,12 @@ MonoBehaviour:
     cameraDeviceModeSetting: -2
     maxSimultaneousImageTargets: 5
     maxSimultaneousObjectTargets: 5
+    virtualSceneScaleFactor: 1
     useDelayedLoadingObjectTargets: 0
     modelTargetRecoWhileExtendedTracked: 1
-    version: 8.5.9
+    version: 9.1.7
     eulaAcceptedVersions: '{"Values":["7.5","8.0","8.1","8.3","0.0","7.1","7.2","8.5","9.1"]}'
+    modelTargetMode: 0
   database:
     disableModelExtraction: 0
   videoBackground:
@@ -31,14 +33,10 @@ MonoBehaviour:
       type: 3}
     videoBackgroundEnabled: 1
   deviceTracker:
-    autoInitTracker: 1
     autoStartTracker: 1
-    arcoreRequirement: 2
-    autoImportArcore: 0
-  smartTerrain:
-    autoInitTracker: 0
-    autoStartTracker: 0
+    arcoreRequirement: 1
+    autoImportArcore: 1
+  playmode:
+    playModeType: 0
   webcam:
-    deviceNameSetInEditor: USB2.0 HD IR UVC WebCam
-    turnOffWebCam: 0
     renderTextureLayer: 30

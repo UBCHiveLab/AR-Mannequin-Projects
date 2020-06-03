@@ -67,16 +67,20 @@ namespace Lean.Touch
 			return transform.TransformPoint(point) + transform.forward * offset;
 		}
 
-		public bool TryRaycast(Ray ray, ref Vector3 hit, float offset = 0.0f)
+		public bool TryRaycast(Ray ray, ref Vector3 hit, float offset = 0.0f, bool getClosest = true)
 		{
 			var point    = transform.position;
 			var normal   = transform.forward;
 			var distance = default(float);
 
-			if (Raycast(point, normal, ray, ref distance) == true)
+			if (RayToPlane(point, normal, ray, ref distance) == true)
 			{
 				hit = ray.GetPoint(distance);
-				hit = GetClosest(hit, offset);
+
+				if (getClosest == true)
+				{
+					hit = GetClosest(hit, offset);
+				}
 
 				return true;
 			}
@@ -90,7 +94,7 @@ namespace Lean.Touch
 			var normal   = transform.forward;
 			var distance = default(float);
 
-			if (Raycast(point, normal, ray, ref distance) == true)
+			if (RayToPlane(point, normal, ray, ref distance) == true)
 			{
 				return GetClosest(ray.GetPoint(distance));
 			}
@@ -136,7 +140,7 @@ namespace Lean.Touch
 		}
 #endif
 
-		private bool Raycast(Vector3 point, Vector3 normal, Ray ray, ref float distance)
+		private static bool RayToPlane(Vector3 point, Vector3 normal, Ray ray, ref float distance)
 		{
 			var b = Vector3.Dot(ray.direction, normal);
 

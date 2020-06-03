@@ -463,9 +463,11 @@ Prefab:
     - target: {fileID: 11438438, guid: e2a63f1f28575a549abdfbc4eb9b28d2, type: 2}
       propertyPath: m_Text
       value: "This shows you how to spawn a prefab under your finger when you touch
-        the screen for more than 1 second without moving. This is done using the <color=#0FF>LeanFingerHeld</color>
-        component, which fires the <color=#0FF>OnPositionDown</color> event to the
-        <color=#0FF>LeanSpawn</color> component\u2019s <color=#0FF>Spawn</color> method."
+        the screen for more than 0.5 seconds without moving. This is done using the
+        <color=#0FF>LeanFingerOld</color> component, which fires the <color=#0FF>OnPositionDown</color>
+        event to the <color=#0FF>LeanSpawn</color> component\u2019s <color=#0FF>Spawn</color>
+        method. You can control the time delay using the <color=#0FF>LeanTouch.TapThreshold</color>
+        setting."
       objectReference: {fileID: 0}
     - target: {fileID: 11448614, guid: e2a63f1f28575a549abdfbc4eb9b28d2, type: 2}
       propertyPath: m_Text
@@ -565,7 +567,7 @@ MonoBehaviour:
   onFinger:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Lean.Touch.LeanFingerOld+LeanFingerEvent, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: Lean.Touch.LeanFingerOld+LeanFingerEvent, LeanTouch, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   ScreenDepth:
     Conversion: 1
@@ -589,7 +591,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Lean.Touch.LeanFingerOld+Vector3Event, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: Lean.Touch.LeanFingerOld+Vector3Event, LeanTouch, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!4 &1093219287
 Transform:

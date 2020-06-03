@@ -305,6 +305,11 @@ namespace Lean.Touch
 
 			var currentEventSystem = EventSystem.current;
 
+			if (currentEventSystem == null)
+			{
+				currentEventSystem = FindObjectOfType<EventSystem>();
+			}
+
 			if (currentEventSystem != null)
 			{
 				// Create point event data for this event system?
@@ -388,6 +393,36 @@ namespace Lean.Touch
 			}
 
 			return filteredFingers;
+		}
+
+		private static LeanFinger simulatedTapFinger = new LeanFinger();
+
+		/// <summary>This allows you to simulate a tap on the screen at the specified location.
+		/// NOTE: The tap events will events execute the next time LeanTouch updates, which may be the next frame.</summary>
+		public static void SimulateTap(Vector2 screenPosition, float pressure = 1.0f, int tapCount = 1)
+		{
+			if (OnFingerTap != null)
+			{
+				simulatedTapFinger.Index               = -5;
+				simulatedTapFinger.Age                 = 0.0f;
+				simulatedTapFinger.Set                 = false;
+				simulatedTapFinger.LastSet             = true;
+				simulatedTapFinger.Tap                 = true;
+				simulatedTapFinger.TapCount            = tapCount;
+				simulatedTapFinger.Swipe               = false;
+				simulatedTapFinger.Old                 = false;
+				simulatedTapFinger.Expired             = false;
+				simulatedTapFinger.LastPressure        = pressure;
+				simulatedTapFinger.Pressure            = pressure;
+				simulatedTapFinger.StartScreenPosition = screenPosition;
+				simulatedTapFinger.LastScreenPosition  = screenPosition;
+				simulatedTapFinger.ScreenPosition      = screenPosition;
+				simulatedTapFinger.StartedOverGui      = simulatedTapFinger.IsOverGui;
+				simulatedTapFinger.ClearSnapshots();
+				simulatedTapFinger.RecordSnapshot();
+
+				OnFingerTap(simulatedTapFinger);
+			}
 		}
 
 		protected virtual void Awake()
@@ -650,7 +685,7 @@ namespace Lean.Touch
 		}
 
 		// Add a finger based on index, or return the existing one
-		private void AddFinger(int index, Vector2 screenPosition, float pressure, bool set)
+		private LeanFinger AddFinger(int index, Vector2 screenPosition, float pressure, bool set)
 		{
 			var finger = FindFinger(index);
 
@@ -660,7 +695,7 @@ namespace Lean.Touch
 				// If a finger goes up but hasn't been registered yet then it will mess up the event flow, so skip it (this shouldn't normally occur).
 				if (set == false)
 				{
-					return;
+					return null;
 				}
 
 				var inactiveIndex = FindInactiveFingerIndex(index);
@@ -739,6 +774,8 @@ namespace Lean.Touch
 					finger.RecordSnapshot();
 				}
 			}
+
+			return finger;
 		}
 
 		// Find the finger with the specified index, or return null
@@ -779,7 +816,7 @@ namespace Lean.Touch
 			return null;
 		}
 #endif
-		// Find the index of the inactive finger with the specified index, or return -1
+		/// Find the index of the inactive finger with the specified index, or return -1
 		private int FindInactiveFingerIndex(int index)
 		{
 			for (var i = InactiveFingers.Count - 1; i>= 0; i--)
