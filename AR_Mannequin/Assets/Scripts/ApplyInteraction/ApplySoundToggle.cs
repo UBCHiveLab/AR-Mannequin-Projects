@@ -63,6 +63,8 @@ public class ApplySoundToggle : MonoBehaviour
         {
             Debug.Log("changing audio source to " + clip);
             audioSource.clip = SoundRepo.GetSound(type, clip);
+            if(audioSource.mute)
+                audioSource.mute = false;
             audioSource.Play();
         }
     }
@@ -78,6 +80,8 @@ public class ApplySoundToggle : MonoBehaviour
             if (status)
             {
                 Debug.Log("Play audio source" + name);
+                if (audioSource.mute)
+                    audioSource.mute = false;
                 audioSource.Play();
             }
             else
