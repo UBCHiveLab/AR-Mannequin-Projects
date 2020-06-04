@@ -22,7 +22,7 @@ public class ApplyOrganSound : Singleton<ApplyOrganSound>
 
     private void Start()
     {
-        source = Make.Instance.MakeAudioSource(GameObject.Find("MixedRealityCameraParent"));
+        source = Make.Instance.MakeAudioSource(GameObject.Find("ARCamera"));
         source.loop = true;
         source.clip = null;
         source.volume = 0f;

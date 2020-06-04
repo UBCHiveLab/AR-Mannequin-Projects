@@ -9,7 +9,7 @@ public class InitializeAllInstances : MonoBehaviour {
 	void Awake () {
         this.gameObject.AddComponent<SortStethoscopeAndOrganSounds>();
         this.gameObject.AddComponent<MagicStickInterface>();
-        this.gameObject.AddComponent<SceneOrganInterface>();
+        //this.gameObject.AddComponent<SceneOrganInterface>();
         this.gameObject.AddComponent<ApplyOrganSound>();
         this.gameObject.AddComponent<CalculateCollision>();
         this.gameObject.AddComponent<ApplyIMUUpdate>();
@@ -24,7 +24,7 @@ public class InitializeAllInstances : MonoBehaviour {
 
         SortStethoscopeAndOrganSounds stubb = SortStethoscopeAndOrganSounds.Instance;
         MagicStickInterface stubbb = MagicStickInterface.Instance;
-        SceneOrganInterface stubbbb = SceneOrganInterface.Instance;
+        //SceneOrganInterface stubbbb = SceneOrganInterface.Instance;
         SortOverlays stubzzz = SortOverlays.Instance;
     }
 
