@@ -27,6 +27,8 @@ public class HRWaveSpawner : MonoBehaviour
         box = this.GetComponent<BoxCollider>();
         WaveTranslateSpeed = WaveSpeed;
 
+        isInit = true;
+    
     }
 
 
@@ -34,9 +36,7 @@ public class HRWaveSpawner : MonoBehaviour
     void Update()
     {
 
-        if (UpdateECG.isARPlaced)
-        {
-            Debug.Log(UpdateECG.isARPlaced);
+
             //initialize the first wave
             if (isInit)
             {
@@ -51,8 +51,8 @@ public class HRWaveSpawner : MonoBehaviour
                 currentWave.GetComponent<BoxCollider>().size = box.size;
                 isInit = false;
             }
-        }
     }
+
     private void OnEnable()
     {
         //set the spawner to initial a new wave everytime it's been initialed
