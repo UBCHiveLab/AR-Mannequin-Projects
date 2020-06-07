@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Lean.Common;
 
-public class RepositionHandler : MonoBehaviour
+namespace Lean.Touch
 {
-    public GameObject planeFinder;
-    public GameObject mannekinPlane;
+        public class RepositionHandler : MonoBehaviour
+    {
+        public GameObject planeFinder;
+        public GameObject mannekin;
+        public GameObject groundPlane;
 
-    public void EnablePlaneFinder()
-    {   
-        planeFinder.SetActive(true);
-        mannekinPlane.transform.position = new Vector3(0,0,0);
+        public void EnablePlaneFinder()
+        {   
+            planeFinder.SetActive(true);
+            mannekin.transform.localScale = new Vector3(1,1,1);
+        }
     }
 }
