@@ -7,38 +7,38 @@ using UnityEditor;
 [CustomEditor(typeof(PulseEngineController), true)]
 public abstract class PulseEngineControllerEditor : Editor
 {
-    SerializedProperty driverProperty;  // serialized pulse driver
+  SerializedProperty driverProperty;  // serialized pulse driver
 
-    void OnEnable()
+  void OnEnable()
+  {
+    driverProperty = serializedObject.FindProperty("driver");
+  }
+
+  public override void OnInspectorGUI()
+  {
+    // Ensure serialized properties are up to date with component
+    serializedObject.Update();
+
+    // Draw UI to select data source
+    EditorGUILayout.PropertyField(driverProperty, new GUIContent("Engine driver"));
+
+    // Display error message if data source is invalid then return
+    var driver = driverProperty.objectReferenceValue as PulseEngineDriver;
+    if (driver == null)
     {
-        driverProperty = serializedObject.FindProperty("driver");
+      serializedObject.ApplyModifiedProperties();
+      EditorGUILayout.LabelField("Error", "Input driver missing");
+      return;
     }
 
-    public override void OnInspectorGUI()
-    {
-        // Ensure serialized properties are up to date with component
-        serializedObject.Update();
+    // Show the default inspector property editor without the script field
+    DrawPropertiesExcluding(serializedObject, "m_Script");
 
-        // Draw UI to select data source
-        EditorGUILayout.PropertyField(driverProperty, new GUIContent("Engine driver"));
+    DrawProperties();
 
-        // Display error message if data source is invalid then return
-        var driver = driverProperty.objectReferenceValue as PulseEngineDriver;
-        if (driver == null)
-        {
-            serializedObject.ApplyModifiedProperties();
-            EditorGUILayout.LabelField("Error", "Input driver missing");
-            return;
-        }
+    // Apply modifications back to the component
+    serializedObject.ApplyModifiedProperties();
+  }
 
-        // Show the default inspector property editor without the script field
-        DrawPropertiesExcluding(serializedObject, "m_Script");
-
-        DrawProperties();
-
-        // Apply modifications back to the component
-        serializedObject.ApplyModifiedProperties();
-    }
-
-    internal abstract void DrawProperties();
+  internal abstract void DrawProperties();
 }

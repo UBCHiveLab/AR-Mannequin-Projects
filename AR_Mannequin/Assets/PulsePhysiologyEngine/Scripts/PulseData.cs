@@ -9,48 +9,48 @@ using UnityEngine;
 [System.Serializable]
 public class FloatList
 {
-    public List<float> list;
-    public FloatList()
+  public List<float> list;
+  public FloatList()
+  {
+    list = new List<float>();
+  }
+  public FloatList(int capacity)
+  {
+    list = new List<float>(capacity);
+  }
+  public void Clear()
+  {
+    list.Clear();
+  }
+  public void Add(float value)
+  {
+    list.Add(value);
+  }
+  public void Set(int index, float value)
+  {
+    list[index] = value;
+  }
+  public float Get(int index)
+  {
+    return list[index];
+  }
+  public int Count
+  {
+    get
     {
-        list = new List<float>();
+      return list.Count;
     }
-    public FloatList(int capacity)
-    {
-        list = new List<float>(capacity);
-    }
-    public void Clear()
-    {
-        list.Clear();
-    }
-    public void Add(float value)
-    {
-        list.Add(value);
-    }
-    public void Set(int index, float value)
-    {
-        list[index] = value;
-    }
-    public float Get(int index)
-    {
-        return list[index];
-    }
-    public int Count
-    {
-        get
-        {
-            return list.Count;
-        }
-    }
-    public bool IsEmpty()
-    {
-        return Count == 0;
-    }
+  }
+  public bool IsEmpty()
+  {
+    return Count == 0;
+  }
 }
 
 // Data container for Pulse vitals
-public class PulseData: ScriptableObject
+public class PulseData : ScriptableObject
 {
-    public string[] fields;             // name of the data fields
-    public FloatList timeStampList;     // list of time points
-    public List<FloatList> valuesTable; // table holding a value for each time point for each data field
+  public string[] fields;             // name of the data fields
+  public FloatList timeStampList;     // list of time points
+  public List<FloatList> valuesTable; // table holding a value for each time point for each data field
 }

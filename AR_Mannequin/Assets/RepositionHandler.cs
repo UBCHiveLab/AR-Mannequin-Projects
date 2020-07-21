@@ -14,8 +14,9 @@ namespace Lean.Touch
 
         public void EnablePlaneFinder()
         {   
+            Debug.Log("Scene Reset");
             planeFinder.SetActive(true);
-            mannekin.transform.localScale = new Vector3(1,1,1);
+            mannekin.transform.localScale = Vector3.zero;
         }
 
         void OnEnable()
@@ -30,11 +31,11 @@ namespace Lean.Touch
 
         void HandleFingerTap(LeanFinger finger)
         {
-            if (finger.IsOverGui)
+            if (finger.Tap)
             {
             Debug.Log("You just tapped the screen");
-            Debug.Log("There are currently " + finger.Index + " at " + finger.ScreenPosition + " and " + finger.IsOverGui);
-            LeanTouch.SimulateTap(new Vector2(2413, 1288), 1.0f, 3);
+            //Debug.Log("There are currently " + finger.Index + " at " + finger.ScreenPosition + " and " + finger.IsOverGui);
+            //LeanTouch.SimulateTap(new Vector2(0, 0), 1.0f, 3);
             }
         }
 
