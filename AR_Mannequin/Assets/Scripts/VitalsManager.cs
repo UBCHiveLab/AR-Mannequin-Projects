@@ -16,6 +16,7 @@ public enum Vitals{
 //define where the student/user is at in relevant to the manikin
 public enum UserPosition
 {
+    none,
     head,
     chest,
     arm
@@ -30,19 +31,45 @@ public class VitalsManager : Singleton<VitalsManager>
     [SerializeField]
     private Text timerText;
 
+    static Dictionary<UserPosition, Vitals[]> positionVitalPairs=new Dictionary<UserPosition, Vitals[]>();
+
+    private UserPosition currentUserPosition = UserPosition.none;
+
     void Awake()
     {
         vitalsControllerList = GetComponentsInChildren<VitalsController>().ToList();
         TurnOffAllVitalUI();
         timerText.gameObject.SetActive(false);
+        
+        //Temorarily define the position vital pairs in the begining
+        positionVitalPairs.Add(UserPosition.head, new Vitals[] { Vitals.EndtidalCO2Detector, Vitals.NasopharyngealTemperatureProbe });
+        positionVitalPairs.Add(UserPosition.chest, new Vitals[] { Vitals.ECGLeads });
+        positionVitalPairs.Add(UserPosition.arm, new Vitals[] { Vitals.BloodPressureCuff, Vitals.PulseOximeter });
+
+    }
+    public void VitalsUIControlBasedOnUserPosition(UserPosition userPosition)
+    {
+        Debug.Log(userPosition);
+        if (userPosition == UserPosition.none)
+        {
+            TurnOffAllVitalUI();
+        }
+        else if (currentUserPosition != userPosition)
+        {
+            Vitals[] vitals = positionVitalPairs[userPosition];
+            TurnOffAllVitalUI();
+            TurnOnVitalsUI(vitals.ToList());
+        }
+        currentUserPosition = userPosition;
     }
 
-    public void TurnOffAllVitalUI()
+    #region PRIVATE_METHODS
+    private void TurnOffAllVitalUI()
     {
         //deactivate all vitals ui
         vitalsControllerList.ForEach(x => x.gameObject.SetActive(false));
     }
-    public void TurnOnVitalsUI(List<Vitals> vitalList)
+    private void TurnOnVitalsUI(List<Vitals> vitalList)
     {
         //check if vitalsControllerList is empty
         if (vitalsControllerList.Count > 0 && !isInTimer)
@@ -52,25 +79,41 @@ public class VitalsManager : Singleton<VitalsManager>
                 vitalsControllerList.Find(x => x.vital == vital).gameObject.SetActive(true);
             }
         }
-
-
     }
+    private void TurnOnCurrentVital()
+    {
+        if (currentUserPosition != UserPosition.none)
+        {
+            Vitals[] vitals = positionVitalPairs[currentUserPosition];
+            TurnOnVitalsUI(vitals.ToList());
+        }
+    }
+    #endregion
+    
+
+    #region TIMER_RELATED_METHODS
     public void OnVitalButtonClick()
     {
         StartCoroutine(Timer());
+        
     }
     private IEnumerator Timer()
     {
         timerText.gameObject.SetActive(true);
         float countdown = countdownTime;
         isInTimer = true;
+        TurnOffAllVitalUI();
+
+        Debug.Log("Timer Starting");
         while (countdown > 0)
         {
-            timerText.text = FloatToTime(countdown, "00.0");
+            timerText.text = FloatToTime(countdown, "00.00");
+            countdown -= Time.deltaTime;
             yield return null;
         }
         isInTimer = false;
         timerText.gameObject.SetActive(false);
+        TurnOnCurrentVital();
     }
     public string FloatToTime(float toConvert, string format)
     {
@@ -140,4 +183,5 @@ public class VitalsManager : Singleton<VitalsManager>
         }
         return "error";
     }
+    #endregion
 }
