@@ -732,6 +732,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vital: 2
+  vitalAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 476961296}
+        m_MethodName: ChangeToggleValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &517393879
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,6 +874,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vital: 0
+  vitalAction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &565229416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1077,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vital: 1
+  vitalAction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &755396013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1307,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vital: 4
+  vitalAction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &889509864
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,6 +3266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vital: 3
+  vitalAction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2097984049
 GameObject:
   m_ObjectHideFlags: 0

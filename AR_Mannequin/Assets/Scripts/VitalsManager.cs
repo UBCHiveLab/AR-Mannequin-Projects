@@ -38,27 +38,23 @@ public class VitalsManager : Singleton<VitalsManager>
     void Awake()
     {
         vitalsControllerList = GetComponentsInChildren<VitalsController>().ToList();
-        
+        foreach (VitalsController vitalsController in vitalsControllerList)
+        {
+            vitalsController.AddListener(() => OnVitalButtonClick(vitalsController));
+            vitalsController.AddListener((bool a) => OnVitalButtonClick(vitalsController));
+        }
+
+        TurnOffAllVitalUI();
+
         timerText.gameObject.SetActive(false);
         
         //Temorarily define the position vital pairs in the begining
         positionVitalPairs.Add(UserPosition.head, new Vitals[] { Vitals.EndtidalCO2Detector, Vitals.NasopharyngealTemperatureProbe });
         positionVitalPairs.Add(UserPosition.chest, new Vitals[] { Vitals.ECGLeads });
         positionVitalPairs.Add(UserPosition.arm, new Vitals[] { Vitals.BloodPressureCuff, Vitals.PulseOximeter });
-        Button[] vitalButtons = this.GetComponentsInChildren<Button>();
-        foreach (Button vitalButton in vitalButtons)
-        {
-            vitalButton.onClick.AddListener(()=> OnVitalButtonClick(vitalButton));
-           
-            
-        }
-        Toggle[] vitalToggles = this.GetComponentsInChildren<Toggle>();
-        foreach (Toggle vitalToggle in vitalToggles)
-        {
-            vitalToggle.onValueChanged.AddListener((bool a) => OnVitalButtonClick(null, vitalToggle));
+        
 
-        }
-        TurnOffAllVitalUI();
+        
     }
     public void VitalsUIControlBasedOnUserPosition(UserPosition userPosition)
     {
@@ -105,14 +101,13 @@ public class VitalsManager : Singleton<VitalsManager>
 
 
     #region TIMER_RELATED_METHODS
-    public void OnVitalButtonClick(Button vitalButton = null, Toggle vitalToggle = null)
+    public void OnVitalButtonClick(VitalsController vitalsController)
     {
-        StartCoroutine(Timer(vitalButton, vitalToggle));
-        Debug.Log(vitalButton+"is clicked");
+        StartCoroutine(Timer(vitalsController));
     }
-    private IEnumerator Timer(Button vitalButton = null, Toggle vitalToggle = null)
+    private IEnumerator Timer(VitalsController vitalsController)
     {
-        NetworkUI networkUI;
+        
         timerText.gameObject.SetActive(true);
         float countdown = countdownTime;
         isInTimer = true;
@@ -128,23 +123,11 @@ public class VitalsManager : Singleton<VitalsManager>
         }
         isInTimer = false;
         timerText.gameObject.SetActive(false);
-        if (vitalButton != null)
+        if (vitalsController != null)
         {
-            networkUI = vitalButton.GetComponent<NetworkUI>();
-            if (networkUI!=null)
-            {
-                networkUI.ChangeToggleValue(true);
-            }
-            ButtonGrayOut.DisableButton(vitalButton);
+            vitalsController.OnVitalClick();
         }
-        else if (vitalToggle != null)
-        {
-            networkUI = vitalToggle.GetComponent<NetworkUI>();
-            if (networkUI != null)
-            {
-                networkUI.ChangeToggleValue();
-            }
-        }
+        
         TurnOnCurrentVital();
     }
     public string FloatToTime(float toConvert, string format)
