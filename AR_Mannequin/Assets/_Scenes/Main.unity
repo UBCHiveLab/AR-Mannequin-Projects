@@ -123,7 +123,6 @@ GameObject:
   - component: {fileID: 3472513}
   - component: {fileID: 3472516}
   - component: {fileID: 3472514}
-  - component: {fileID: 3472517}
   m_Layer: 8
   m_Name: Collider_Chest
   m_TagString: Untagged
@@ -166,20 +165,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3472512}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &3472517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3472512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3501ce75b3a8044a4b449e2beecc7a23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrigggeredVitals: 02000000
-  userPosition: 1
 --- !u!1 &36031022
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,9 +416,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -96}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &273506210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,7 +444,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -595,7 +580,6 @@ GameObject:
   - component: {fileID: 469078242}
   - component: {fileID: 469078245}
   - component: {fileID: 469078243}
-  - component: {fileID: 469078246}
   m_Layer: 8
   m_Name: Collider_Arm
   m_TagString: Untagged
@@ -638,20 +622,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469078241}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &469078246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469078241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3501ce75b3a8044a4b449e2beecc7a23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrigggeredVitals: 0300000004000000
-  userPosition: 2
 --- !u!1 &476961294
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,29 +717,7 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 476961296}
-        m_MethodName: ChangeToggleValue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 755396016}
-        m_MethodName: OnVitalButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_IsOn: 0
 --- !u!114 &476961298
 MonoBehaviour:
@@ -863,18 +811,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 517393882}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 755396016}
-        m_MethodName: OnVitalButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &517393882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,18 +1011,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 569993027}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 755396016}
-        m_MethodName: OnVitalButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &569993027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1312,18 +1238,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 786532918}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 755396016}
-        m_MethodName: OnVitalButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &786532918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1383,7 +1298,6 @@ GameObject:
   - component: {fileID: 889509865}
   - component: {fileID: 889509868}
   - component: {fileID: 889509866}
-  - component: {fileID: 889509869}
   m_Layer: 8
   m_Name: Collider_Head
   m_TagString: Untagged
@@ -1426,20 +1340,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889509864}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &889509869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889509864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3501ce75b3a8044a4b449e2beecc7a23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrigggeredVitals: 0000000001000000
-  userPosition: 0
 --- !u!1 &940871284
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,18 +3194,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2091719238}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 755396016}
-        m_MethodName: OnVitalButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2091719238
 MonoBehaviour:
   m_ObjectHideFlags: 0
