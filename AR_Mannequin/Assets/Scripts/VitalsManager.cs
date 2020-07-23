@@ -58,7 +58,6 @@ public class VitalsManager : Singleton<VitalsManager>
     }
     public void VitalsUIControlBasedOnUserPosition(UserPosition userPosition)
     {
-        Debug.Log(userPosition);
         if (userPosition == UserPosition.none)
         {
             TurnOffAllVitalUI();
@@ -104,6 +103,7 @@ public class VitalsManager : Singleton<VitalsManager>
     public void OnVitalButtonClick(VitalsController vitalsController)
     {
         StartCoroutine(Timer(vitalsController));
+        Debug.Log(vitalsController);
     }
     private IEnumerator Timer(VitalsController vitalsController)
     {
