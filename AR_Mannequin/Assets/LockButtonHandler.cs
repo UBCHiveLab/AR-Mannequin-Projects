@@ -11,6 +11,8 @@ public class LockButtonHandler : MonoBehaviour
     public GameObject planeFinder;
     public Lean.Touch.LeanPinchScale scaleScript;
     public Lean.Touch.LeanDragTranslate dragScript;
+    
+    public Lean.Touch.LeanTwistRotateAxis rotateScript;
     bool isItLocked = false;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,11 @@ public class LockButtonHandler : MonoBehaviour
         
     }
 
+    public void UnlockInteraction()
+    {
+        isItLocked = true;
+        LockMechanism();
+    }
     public void LockMechanism()
     {
         Text txt = transform.Find("Text").GetComponent<Text>();
@@ -35,6 +42,7 @@ public class LockButtonHandler : MonoBehaviour
             img.sprite = lockedSprite;
             scaleScript.enabled = false;
             dragScript.enabled = false;
+            rotateScript.enabled = false;
             planeFinder.SetActive(false);
 
         }
@@ -48,6 +56,7 @@ public class LockButtonHandler : MonoBehaviour
             img.sprite = unlockedSprite;
             scaleScript.enabled = true;
             dragScript.enabled = true;
+            rotateScript.enabled = true;
         }
     }
 
