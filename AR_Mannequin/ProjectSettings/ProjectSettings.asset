@@ -753,7 +753,7 @@ PlayerSettings:
     27: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER
   platformArchitecture: {}
   scriptingBackend:
-    Android: 0
+    Android: 1
     Metro: 2
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
@@ -764,7 +764,7 @@ PlayerSettings:
   gcIncremental: 0
   gcWBarrierValidation: 0
   apiCompatibilityLevelPerPlatform:
-    Android: 6
+    Android: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: ARMannequin
