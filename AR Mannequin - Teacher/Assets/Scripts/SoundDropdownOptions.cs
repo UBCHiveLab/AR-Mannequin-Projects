@@ -20,6 +20,7 @@ public class SoundDropdownOptions : MonoBehaviour
                 options.Add(new Dropdown.OptionData(item));
             }
         }
+        //To Do: Longer texts overflow on the dropdown will be hidden
         SoundDropdown.AddOptions(options);
     }
 

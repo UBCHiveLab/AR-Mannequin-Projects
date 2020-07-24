@@ -30,6 +30,12 @@ public class NetworkUI : MonoBehaviour
         ApplyCommand();
     }
 
+    public void ChangeToggleValue(bool value)
+    {
+        newValue = value;
+        ApplyCommand();
+    }
+
     public void ChangeIntValue()
     {
         newValue = GetComponent<Slider>().value;

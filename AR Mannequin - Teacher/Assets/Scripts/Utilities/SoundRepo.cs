@@ -23,16 +23,29 @@ public class SoundRepo : MonoBehaviour
 
     private static readonly List<Sound> availableSounds = new List<Sound>{
         new Sound(SoundType.HEART, "heart_placeholder", "Normal"),
+        new Sound(SoundType.HEART, "Heart - Normal Split S1", "Normal S1"),
+        new Sound(SoundType.HEART, "Heart - Normal Split Second Sound", "Normal S2"),
         new Sound(SoundType.HEART, "heart_placeholder_notLoud", "Quiet"),
         new Sound(SoundType.HEART, "Aortic", "Aortic"),
         new Sound(SoundType.HEART, "Mitral", "Mitral"),
         new Sound(SoundType.HEART, "Pulmonary", "Pulmonary"),
         new Sound(SoundType.HEART, "Tricuspid", "Tricuspid"),
-        new Sound(SoundType.LUNG, "NormalBreathSound", "Normal"),
+        new Sound(SoundType.HEART, "Heart - Diastolic Rumble", "Diastolic Rumble"),
+        new Sound(SoundType.HEART, "Heart - Early Systolic Murmur", "Early Systolic Murmur"),
+        new Sound(SoundType.HEART, "Heart - Ejection Click", "Ejection Click"),
+        new Sound(SoundType.HEART, "Heart - Opening Snap", "Opening Snap"),
+        new Sound(SoundType.HEART, "Heart - Pansystolic Murmur", "Pansystolic Murmur"),
+        new Sound(SoundType.HEART, "Heart - S3", "S3"),
+        new Sound(SoundType.HEART, "Heart - S4", "S4"),
+        new Sound(SoundType.LUNG, "Lung - Normal Vesicular", "Normal"),
+        new Sound(SoundType.LUNG, "Lung - Wheezing", "Wheezing"),
+        new Sound(SoundType.LUNG, "Lung - Pleural Friction", "Pleural Friction"),
+        new Sound(SoundType.LUNG, "Lung - Inspiratory Stridor", "Inspiratory Stridor"),
+        new Sound(SoundType.LUNG, "Lung - Coarse Crackles", "Coarse Crackles"),
         new Sound(SoundType.MONITOR, "ar-cpr-ekg-sound_deadBeep", "Dead"),
         new Sound(SoundType.MONITOR, "ar-cpr-ekg-sound_singleBeep", "Normal"),
         new Sound(SoundType.MONITOR, "ar-cpr-ekg-sound_warningBeep", "Warning"),
-        new Sound(SoundType.AMBIENT, "hospitalNoise", "ER Noise")
+        new Sound(SoundType.AMBIENT, "EmergencyRoomBackgroundNoise", "ER Noise")
     };
     /// <summary>
     /// Beginning of interface for getting images from resources folder
