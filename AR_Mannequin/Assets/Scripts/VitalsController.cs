@@ -6,10 +6,13 @@ using UnityEngine.UI;
 
 public class VitalsController : MonoBehaviour
 {
+    [SerializeField]
+    private bool grayOut=true;
     public Vitals vital;
     public UnityEvent vitalAction;
     private Button vitalButton;
     private Toggle vitalToggle;
+    
 
     private void Awake()
     {
@@ -24,7 +27,7 @@ public class VitalsController : MonoBehaviour
     }
     public void DisableButton()
     {
-        if (vitalButton != null)
+        if (vitalButton != null&&grayOut)
             ButtonGrayOut.DisableButton(vitalButton);
     }
     public void AddListener(UnityAction call)

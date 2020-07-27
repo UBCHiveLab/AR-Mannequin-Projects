@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public enum Vitals{
 
     EndtidalCO2Detector,
-    NasopharyngealTemperatureProbe,
+    TakeTemperature,
     ECGLeads,
     BloodPressureCuff,
-    PulseOximeter
+    PulseOximeter,
+    StartIV,
+    GiveMedication
 
 }
 //define where the student/user is at in relevant to the manikin
@@ -49,9 +51,9 @@ public class VitalsManager : Singleton<VitalsManager>
         timerText.gameObject.SetActive(false);
         
         //Temorarily define the position vital pairs in the begining
-        positionVitalPairs.Add(UserPosition.head, new Vitals[] { Vitals.EndtidalCO2Detector, Vitals.NasopharyngealTemperatureProbe });
+        positionVitalPairs.Add(UserPosition.head, new Vitals[] { Vitals.EndtidalCO2Detector, Vitals.TakeTemperature });
         positionVitalPairs.Add(UserPosition.chest, new Vitals[] { Vitals.ECGLeads });
-        positionVitalPairs.Add(UserPosition.arm, new Vitals[] { Vitals.BloodPressureCuff, Vitals.PulseOximeter });
+        positionVitalPairs.Add(UserPosition.arm, new Vitals[] { Vitals.BloodPressureCuff, Vitals.PulseOximeter,Vitals.StartIV,Vitals.GiveMedication });
         
 
         
