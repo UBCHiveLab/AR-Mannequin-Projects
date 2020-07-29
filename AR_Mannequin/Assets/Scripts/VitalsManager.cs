@@ -42,6 +42,7 @@ public class VitalsManager : Singleton<VitalsManager>
         vitalsControllerList = GetComponentsInChildren<VitalsController>().ToList();
         foreach (VitalsController vitalsController in vitalsControllerList)
         {
+           
             vitalsController.AddListener(() => OnVitalButtonClick(vitalsController));
             vitalsController.AddListener((bool a) => OnVitalButtonClick(vitalsController));
         }
@@ -54,8 +55,6 @@ public class VitalsManager : Singleton<VitalsManager>
         positionVitalPairs.Add(UserPosition.head, new Vitals[] { Vitals.EndtidalCO2Detector, Vitals.TakeTemperature });
         positionVitalPairs.Add(UserPosition.chest, new Vitals[] { Vitals.ECGLeads });
         positionVitalPairs.Add(UserPosition.arm, new Vitals[] { Vitals.BloodPressureCuff, Vitals.PulseOximeter,Vitals.StartIV,Vitals.GiveMedication });
-        
-
         
     }
     public void VitalsUIControlBasedOnUserPosition(UserPosition userPosition)

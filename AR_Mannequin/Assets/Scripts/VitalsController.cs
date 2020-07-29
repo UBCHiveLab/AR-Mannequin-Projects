@@ -14,12 +14,6 @@ public class VitalsController : MonoBehaviour
     private Toggle vitalToggle;
     
 
-    private void Awake()
-    {
-        vitalButton = GetComponent<Button>();
-        vitalToggle = GetComponent<Toggle>();
-    }
-
     public void OnVitalClick()
     {
         vitalAction.Invoke();
@@ -32,15 +26,18 @@ public class VitalsController : MonoBehaviour
     }
     public void AddListener(UnityAction call)
     {
+        vitalButton = GetComponent<Button>();
         if (vitalButton != null)
         {
             vitalButton.onClick.AddListener(call);
+            Debug.Log("added listener"+vitalButton);
         }
         
     }
     public void AddListener(UnityAction<bool> call)
     {
-         if (vitalToggle != null)
+        vitalToggle = GetComponent<Toggle>();
+        if (vitalToggle != null)
         {
             vitalToggle.onValueChanged.AddListener(call);
             
