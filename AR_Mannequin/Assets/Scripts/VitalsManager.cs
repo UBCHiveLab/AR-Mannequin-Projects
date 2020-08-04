@@ -12,7 +12,19 @@ public enum Vitals{
     BloodPressureCuff,
     PulseOximeter,
     StartIV,
-    GiveMedication
+    AbdominalExam,
+    InsertLO,
+    LungSounds,
+    HeartSounds,
+    ChestCompression,
+    O2NP,
+    O2Facemask,
+    BVM,
+    O2Sat,
+    IVMedication,
+    IMMedication,
+    DrawBlood,
+    Glucose
 
 }
 //define where the student/user is at in relevant to the manikin
@@ -21,15 +33,14 @@ public enum UserPosition
     none,
     head,
     chest,
-    arm
+    leftArm,
+    bottom
 }
 
 public class VitalsManager : Singleton<VitalsManager>
 {
     List<VitalsController> vitalsControllerList;
     public bool isInTimer = false;
-    [SerializeField]
-    private float countdownTime;
     [SerializeField]
     private Text timerText;
 
@@ -50,12 +61,13 @@ public class VitalsManager : Singleton<VitalsManager>
         TurnOffAllVitalUI();
 
         timerText.gameObject.SetActive(false);
-        
+
         //Temorarily define the position vital pairs in the begining
-        positionVitalPairs.Add(UserPosition.head, new Vitals[] { Vitals.EndtidalCO2Detector, Vitals.TakeTemperature });
-        positionVitalPairs.Add(UserPosition.chest, new Vitals[] { Vitals.ECGLeads });
-        positionVitalPairs.Add(UserPosition.arm, new Vitals[] { Vitals.BloodPressureCuff, Vitals.PulseOximeter,Vitals.StartIV,Vitals.GiveMedication });
-        
+        positionVitalPairs.Add(UserPosition.head, new Vitals[] { Vitals.EndtidalCO2Detector, Vitals.TakeTemperature, Vitals.BVM, Vitals.O2NP, Vitals.O2Facemask });
+        positionVitalPairs.Add(UserPosition.chest, new Vitals[] { Vitals.ECGLeads, Vitals.LungSounds, Vitals.HeartSounds, Vitals.ChestCompression });
+        positionVitalPairs.Add(UserPosition.leftArm, new Vitals[] { Vitals.BloodPressureCuff, Vitals.O2Sat, Vitals.StartIV, Vitals.IMMedication, Vitals.IVMedication, Vitals.DrawBlood, Vitals.Glucose });
+        positionVitalPairs.Add(UserPosition.bottom, new Vitals[] { Vitals.AbdominalExam, Vitals.InsertLO });
+
     }
     public void VitalsUIControlBasedOnUserPosition(UserPosition userPosition)
     {
@@ -110,7 +122,9 @@ public class VitalsManager : Singleton<VitalsManager>
     {
         
         timerText.gameObject.SetActive(true);
-        float countdown = countdownTime;
+        
+        float countdown = vitalsController.countdownTime;
+        
         isInTimer = true;
         
         TurnOffAllVitalUI();

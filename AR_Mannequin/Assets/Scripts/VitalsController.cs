@@ -8,6 +8,7 @@ public class VitalsController : MonoBehaviour
 {
     [SerializeField]
     private bool grayOut=true;
+    public float countdownTime=10;
     public Vitals vital;
     public UnityEvent vitalAction;
     private Button vitalButton;
