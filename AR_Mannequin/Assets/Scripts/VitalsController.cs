@@ -9,15 +9,21 @@ public class VitalsController : MonoBehaviour
     [SerializeField]
     private bool grayOut=true;
     public float countdownTime=10;
-    public Vitals vital;
-    public UnityEvent vitalAction;
+
+    //Actions that will be invoke before timer starts, i.e sending message to facilitator
+    public UnityEvent vitalActionBeforeTimer;
+    //Actions that will be invoke after timer ends, i.e apply ecg cuff
+    public UnityEvent vitalActionAfterTimer;
     private Button vitalButton;
     private Toggle vitalToggle;
-    
 
-    public void OnVitalClick()
+    public void InvokeActionBeforeTimer()
     {
-        vitalAction.Invoke();
+        vitalActionBeforeTimer.Invoke();
+    }
+    public void InvokeActionAfterTimer()
+    {
+        vitalActionAfterTimer.Invoke();
         DisableButton();
     }
     public void DisableButton()

@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class TriggerVitalUI : MonoBehaviour
 {
-    public List<Vitals> TrigggeredVitals;
+    //public List<Vitals> TrigggeredVitals;
     public UserPosition userPosition;
 
     //private void OnTriggerEnter(Collider other)

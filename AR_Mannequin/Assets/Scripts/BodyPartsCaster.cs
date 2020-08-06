@@ -7,7 +7,7 @@ using System.Linq;
 /// Running a sphere cast to detect what part of the manikin's body the user is close to,
 /// and calling vitals manager to display proper UI
 /// </summary>
-public class BodyPartsCater : MonoBehaviour
+public class BodyPartsCaster : MonoBehaviour
 {
     private Vector3 origin;
     private Vector3 direction;
@@ -33,7 +33,7 @@ public class BodyPartsCater : MonoBehaviour
             RaycastHit nearestHit = hits.OrderBy(hit => hit.distance).First();
 
             VitalsManager.Instance.VitalsUIControlBasedOnUserPosition(ParseColliderName(nearestHit.transform.name));
-
+            
         }
         else
         {
