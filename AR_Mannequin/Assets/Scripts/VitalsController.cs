@@ -9,6 +9,7 @@ public class VitalsController : MonoBehaviour
     [SerializeField]
     private bool grayOut=true;
     public float countdownTime=10;
+    public VitalActions vitalAction;
 
     //Actions that will be invoke before timer starts, i.e sending message to facilitator
     public UnityEvent vitalActionBeforeTimer;

@@ -118,7 +118,10 @@ public class ListPositionCtrl : MonoBehaviour, IControlEventHandler
 	 */
 	void Start()
 	{
+        // added by Silver Xu, calculate the box gap factor by screen size
         boxGapFactor = Screen.width / 380;
+        // added by Silver Xu, no need to manually add list box
+        listBoxes = GetComponentsInChildren<ListBox>();
 		InitializePositionVars();
 		InitializeInputFunction();
 		InitializeBoxDependency();

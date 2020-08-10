@@ -3,31 +3,67 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
-//public enum Vitals{
+// define all the vital actions with a description value
+public enum VitalActions
+{
+    [Description("End Tidal CO2 Detector")]
+    EndtidalCO2Detector,
+    [Description("Take Temperature")]
+    TakeTemperature,
+    [Description("ECG Leads")]
+    ECGLeads,
+    [Description("Femoral Pulse")]
+    FemoralPulse,
+    [Description("Start IV")]
+    StartIV,
+    [Description("Abdominal Exam")]
+    AbdominalExam,
+    [Description("Insert LO")]
+    InsertLO,
+    [Description("Lung Sounds")]
+    LungSounds,
+    [Description("Heart Sounds")]
+    HeartSounds,
+    [Description("Chest Compression")]
+    ChestCompression,
+    [Description("O2 NP")]
+    O2NP,
+    [Description("O2 Facemask")]
+    O2Facemask,
+    BVM,
+    [Description("O2 Sat")]
+    O2Sat,
+    [Description("IV Medication")]
+    IVMedication,
+    [Description("IM Medication")]
+    IMMedication,
+    [Description("Draw Blood")]
+    DrawBlood,
+    Glucose,
+    [Description("Defib Pads")]
+    DefibPads,
+    [Description("Cartoid Pulse")]
+    CartoidPulse,
+    [Description("Radial Pulse")]
+    RadialPulse,
+    [Description("Chest Tube L")]
+    ChestTubeL,
+    [Description("Chest Tube R")]
+    ChestTubeR,
+    [Description("Needle Decompression R")]
+    NeedleDecompressionR,
+    [Description("Needle Decompression L")]
+    NeedleDecompressionL,
+    [Description("Rectal Exam")]
+    RectalExam,
+    [Description("Blood Pressure Cuff")]
+    BloodPressureCuff
+}
 
-//    EndtidalCO2Detector,
-//    TakeTemperature,
-//    ECGLeads,
-//    BloodPressureCuff,
-//    PulseOximeter,
-//    StartIV,
-//    AbdominalExam,
-//    InsertLO,
-//    LungSounds,
-//    HeartSounds,
-//    ChestCompression,
-//    O2NP,
-//    O2Facemask,
-//    BVM,
-//    O2Sat,
-//    IVMedication,
-//    IMMedication,
-//    DrawBlood,
-//    Glucose
-
-//}
-//define where the student/user is at in relevant to the manikin
+// define where the student/user is at in relevant to the manikin
 public enum UserPosition
 {
     none,
@@ -37,6 +73,35 @@ public enum UserPosition
     bottom
 }
 
+/// <summary>
+/// Converts enum description to text
+/// https://stackoverflow.com/questions/1799370/getting-attributes-of-enums-value
+/// </summary>
+public static class EnumExtensions
+{
+
+    // This extension method is broken out so you can use a similar pattern with 
+    // other MetaData elements in the future. This is your base method for each.
+    public static T GetAttribute<T>(this System.Enum value) where T : System.Attribute
+    {
+        var type = value.GetType();
+        var memberInfo = type.GetMember(value.ToString());
+        var attributes = memberInfo[0].GetCustomAttributes(typeof(T), false);
+        return attributes.Length > 0
+          ? (T)attributes[0]
+          : null;
+    }
+
+    // This method creates a specific call to the above method, requesting the
+    // Description MetaData attribute.
+    public static string ToName(this System.Enum value)
+    {
+        var attribute = value.GetAttribute<DescriptionAttribute>();
+        return attribute == null ? value.ToString() : attribute.Description;
+    }
+
+}
+
 public class VitalsManager : Singleton<VitalsManager>
 {
     List<VitalsController> vitalsControllerList;
@@ -44,10 +109,10 @@ public class VitalsManager : Singleton<VitalsManager>
     public bool isInTimer = false;
     private bool isVitalUIOn = false;
     [SerializeField]
-    private Text timerText;
+    private Text timerText,actionNotification;
 
     //static Dictionary<UserPosition, Vitals[]> positionVitalPairs=new Dictionary<UserPosition, Vitals[]>();
-
+    
     private UserPosition currentUserPosition = UserPosition.none;
 
     void Awake()
@@ -64,8 +129,11 @@ public class VitalsManager : Singleton<VitalsManager>
         TurnOffAllVitalUI();
 
         timerText.gameObject.SetActive(false);
+        actionNotification.gameObject.SetActive(false);
         
     }
+    #region PUBLIC_METHODS
+    // turn on button groups bnased on the user position
     public void VitalsUIControlBasedOnUserPosition(UserPosition userPosition)
     {
 
@@ -97,11 +165,11 @@ public class VitalsManager : Singleton<VitalsManager>
         }
         isVitalUIOn = isOn;
     }
-
+    #endregion
     #region PRIVATE_METHODS
     private void TurnOffAllVitalUI()
     {
-        //deactivate all vitals ui
+        // deactivate all vitals ui
         vitalButtonGroupControllers.ForEach(x => x.gameObject.SetActive(false));
     }
     private void TurnOnCurrentVital()
@@ -123,30 +191,48 @@ public class VitalsManager : Singleton<VitalsManager>
     }
     private IEnumerator Timer(VitalsController vitalsController)
     {
-        
+        // activate timer and action notification text
         timerText.gameObject.SetActive(true);
-        
+        actionNotification.gameObject.SetActive(true);
+        // set action notification text with corresponding action
+        actionNotification.text = "OCS is processing action " + '"' + vitalsController.vitalAction.ToName() + '"' + ". Please wait ...";
+        // set countdown time with corresponding time
         float countdown = vitalsController.countdownTime;
-        
+        // determine whether the countdown time is more than a minute
+        string timerFormat = countdown > 60 ? "0:00.00" : "00.00";
+
         isInTimer = true;
         
         TurnOffAllVitalUI();
+        // invoke actions that should be called before timer
+        // this is usually to send message to server
         vitalsController.InvokeActionBeforeTimer();
+
+
         Debug.Log("Timer Starting");
         while (countdown > 0)
         {
-            timerText.text = FloatToTime(countdown, "00.00");
+            timerText.text = "Please wait "+ FloatToTime(countdown, timerFormat);
             countdown -= Time.deltaTime;
             yield return null;
         }
         isInTimer = false;
+        // hide timer text
         timerText.gameObject.SetActive(false);
-        if (vitalsController != null)
-        {
-            vitalsController.InvokeActionAfterTimer();
-        }
-        
+        actionNotification.text= '"' + vitalsController.vitalAction.ToName() + '"' + " has been processed";
+        // action notification text disappear in a second after the countdown ends
+        StartCoroutine(HideActionNotification());
+        // invoke actions that should be called after timer
+        // this is for action that actually should happen
+        vitalsController.InvokeActionAfterTimer();
+        // re-turn on current vital buttons
         TurnOnCurrentVital();
+    }
+    // action notification text disappear in a second after the countdown ends
+    private IEnumerator HideActionNotification()
+    {
+        yield return new WaitForSeconds(1f);
+        actionNotification.gameObject.SetActive(false);
     }
     public string FloatToTime(float toConvert, string format)
     {
@@ -218,3 +304,4 @@ public class VitalsManager : Singleton<VitalsManager>
     }
     #endregion
 }
+
