@@ -38,10 +38,10 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 29, y: 132}
-  m_SizeDelta: {x: 0, y: 80}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 100}
+  m_SizeDelta: {x: 200, y: 100}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &68986961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   boxSlidingFrames: 35
   boxSlidingSpeedFactor: 0.2
   listCurvature: 0.7
-  positionAdjust: -1
+  positionAdjust: -0.6
   centerBoxScaleRatio: 0.7
   numOfUpperDisabledBoxes: 0
   numOfLowerDisabledBoxes: 0
@@ -1200,10 +1200,10 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 29, y: 132}
-  m_SizeDelta: {x: 0, y: 80}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 100}
+  m_SizeDelta: {x: 200, y: 100}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1284473811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,7 +1236,7 @@ MonoBehaviour:
   boxSlidingFrames: 35
   boxSlidingSpeedFactor: 0.2
   listCurvature: 0.7
-  positionAdjust: -1
+  positionAdjust: -0.6
   centerBoxScaleRatio: 0.7
   numOfUpperDisabledBoxes: 0
   numOfLowerDisabledBoxes: 0
@@ -4379,10 +4379,10 @@ RectTransform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 29, y: 132}
-  m_SizeDelta: {x: 0, y: 80}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 100}
+  m_SizeDelta: {x: 200, y: 100}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &5551082784121643978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4416,7 +4416,7 @@ MonoBehaviour:
   boxSlidingFrames: 35
   boxSlidingSpeedFactor: 0.2
   listCurvature: 0.7
-  positionAdjust: -1
+  positionAdjust: -0.6
   centerBoxScaleRatio: 0.7
   numOfUpperDisabledBoxes: 0
   numOfLowerDisabledBoxes: 0
@@ -5217,10 +5217,10 @@ RectTransform:
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 29, y: 132}
-  m_SizeDelta: {x: 0, y: 80}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 100}
+  m_SizeDelta: {x: 200, y: 100}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1486293278694159108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5257,7 +5257,7 @@ MonoBehaviour:
   boxSlidingFrames: 35
   boxSlidingSpeedFactor: 0.2
   listCurvature: 0.7
-  positionAdjust: -1
+  positionAdjust: -0.6
   centerBoxScaleRatio: 0.7
   numOfUpperDisabledBoxes: 0
   numOfLowerDisabledBoxes: 0

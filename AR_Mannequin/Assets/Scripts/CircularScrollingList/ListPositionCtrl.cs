@@ -12,7 +12,9 @@ public interface IControlEventHandler:
 [System.Serializable]
 public class ListBoxClickEvent : UnityEvent<int>
 {}
-
+/// <summary>
+/// https://github.com/LanKuDot/game_modules
+/// </summary>
 public class ListPositionCtrl : MonoBehaviour, IControlEventHandler
 {
 	public enum ListType
@@ -116,6 +118,7 @@ public class ListPositionCtrl : MonoBehaviour, IControlEventHandler
 	 */
 	void Start()
 	{
+        boxGapFactor = Screen.width / 380;
 		InitializePositionVars();
 		InitializeInputFunction();
 		InitializeBoxDependency();

@@ -106,7 +106,7 @@ public class VitalsManager : Singleton<VitalsManager>
     }
     private void TurnOnCurrentVital()
     {
-        if (currentUserPosition != UserPosition.none)
+        if (currentUserPosition != UserPosition.none && !isInTimer)
         {
             vitalButtonGroupControllers.Find(x => x.correspondingUserPosition == currentUserPosition).gameObject.SetActive(true);
         }

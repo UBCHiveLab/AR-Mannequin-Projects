@@ -23,6 +23,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
 
     [SerializeField] private Text status;
     [SerializeField] private Text error;
+    [SerializeField] private bool isPublishUserId = true;
 
     private string roomName;
     private int playerNum;
@@ -125,7 +126,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
     {
         roomName = roomInput.text;
         Debug.Log("Creating new room...");
-        PhotonNetwork.CreateRoom(roomName, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
+        PhotonNetwork.CreateRoom(roomName, new RoomOptions { MaxPlayers = maxPlayersPerRoom , PublishUserId = isPublishUserId });
     }
 
     public override void OnCreatedRoom()

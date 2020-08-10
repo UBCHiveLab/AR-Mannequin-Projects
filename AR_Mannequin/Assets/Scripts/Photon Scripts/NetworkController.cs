@@ -20,8 +20,9 @@ public class NetworkController : MonoBehaviourPunCallbacks
     [SerializeField] private InputField roomInput;
     [SerializeField] private Text textInput;
     [SerializeField] private Text failureText;
+    [SerializeField] private Text userNameInput;
 
-    private string roomName;
+    private string roomName, userId;
 
 
     /******************************************************
@@ -55,6 +56,14 @@ public class NetworkController : MonoBehaviourPunCallbacks
             roomInput.interactable = false;
             connectButton.interactable = true;
         }
+    }
+    private void SetUserID()
+    {
+        AuthenticationValues authValues = new AuthenticationValues();
+        userId = userNameInput.text;
+        
+        authValues.UserId = userId;
+        PhotonNetwork.AuthValues = authValues;
     }
 
     #region PUN Connection

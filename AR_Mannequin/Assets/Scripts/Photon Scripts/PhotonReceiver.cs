@@ -34,6 +34,9 @@ public class PhotonReceiver : MonoBehaviour {
 
     private void NetworkingClient_EventReceived(EventData obj)
     {
+        int senderID = obj.Sender;
+        string senderName = senderID == 0 ? "Server" : Photon.Pun.PhotonNetwork.CurrentRoom.GetPlayer(senderID).UserId;
+        Debug.Log("Received event from " + senderName);
         Debug.Log("Received event: " + obj.Code);
 
         object[] datas = new object[] { new object() };
