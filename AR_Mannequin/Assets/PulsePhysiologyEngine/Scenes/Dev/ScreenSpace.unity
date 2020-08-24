@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4457569, g: 0.49547088, b: 0.57427907, a: 1}
+  m_IndirectSpecularColor: {r: 0.4457572, g: 0.495471, b: 0.5742798, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -220,12 +220,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 114222257}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 745433874a4594c34bebce034601ce8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 63a942fb8798b4041921f82e0f1d37ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 1560742690}
-  CSVInput: {fileID: 4900000, guid: c537e72e1a7444ab28847692c6ab6b8d, type: 3}
-  timeElapsedAtStart: 10
+  data: {fileID: 1798861063}
+  CSVInput: {fileID: 4900000, guid: a88793a7f0d31894192ee266450330bb, type: 3}
+  timeElapsedAtStart: 0
 --- !u!4 &114222259
 Transform:
   m_ObjectHideFlags: 0
@@ -340,8 +340,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 1, b: 0.16078432, a: 1}
-      key1: {r: 0, g: 1, b: 0.16078432, a: 1}
+      key0: {r: 0.101960786, g: 1, b: 0, a: 1}
+      key1: {r: 0.101960786, g: 1, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -384,17 +384,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 329398107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eaae667ea3624bfea5015979b2fda5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 95be0a7f3ee49f7438177e97c70f28b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 114222258}
   dataFieldIndex: 1
   thickness: 1
-  color: {r: 0, g: 1, b: 0.1602869, a: 1}
+  color: {r: 0.103487015, g: 1, b: 0, a: 1}
   traceInitialLine: 1
-  yMin: -0.5
-  yMax: 1.5
-  xRange: 5
+  yMin: -0.7
+  yMax: 1.8
+  xRange: 8
 --- !u!114 &329398111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,8 +413,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -777,13 +775,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 938304252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219cc7226c69e4c579a98c358c94df1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 617b61f1695796740b4ec9739cb4040b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 114222258}
   dataFieldIndex: 2
-  prefix: 'Heartrate: '
-  suffix: ' bpm'
+  prefix: 
+  suffix: 
   multiplier: 1
   decimals: 0
   frequency: 0
@@ -805,8 +803,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
@@ -829,33 +825,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938304252}
   m_CullTransparentMesh: 0
---- !u!114 &1560742690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b542d476b1044fe5a410c288650ba2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fields:
-  - Time (s)
-  - Lead3ElectricPotential (mV)
-  - "HeartRate (1\u2215min)"
-  - ArterialPressure (mmHg)
-  - MeanArterialPressure (mmHg)
-  - SystolicArterialPressure (mmHg)
-  - DiastolicArterialPressure (mmHg)
-  - OxygenSaturation
-  - "RespirationRate (1\u2215min)"
-  - SkinTemperature (degC)
-  - Carina-CarbonDioxide-PartialPressure (mmHg)
-  timeStampList:
-    list: []
-  valuesTable: []
 --- !u!1 &1693991346
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +916,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1798861063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c300108eb8c4b144a3c57c88e71fca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fields:
+  - Time (s)
+  - Lead3ElectricPotential (mV)
+  - "HeartRate (1\u2215min)"
+  - ArterialPressure (mmHg)
+  - MeanArterialPressure (mmHg)
+  - SystolicArterialPressure (mmHg)
+  - DiastolicArterialPressure (mmHg)
+  - OxygenSaturation
+  - "RespirationRate (1\u2215min)"
+  - SkinTemperature (degC)
+  - Carina-CarbonDioxide-PartialPressure (mmHg)
+  timeStampList:
+    list: []
+  valuesTable: []
 --- !u!21 &1855309372
 Material:
   serializedVersion: 6

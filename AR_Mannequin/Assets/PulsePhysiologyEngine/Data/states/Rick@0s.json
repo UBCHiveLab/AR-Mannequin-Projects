@@ -878,7 +878,7 @@
     },
     "Fat": {
      "ScalarMass": {
-      "Value": 17,
+      "Value": 27,
       "Unit": "g"
      }
     },
@@ -890,7 +890,7 @@
     },
     "Protein": {
      "ScalarMass": {
-      "Value": 12,
+      "Value": 20,
       "Unit": "g"
      }
     },
@@ -1633,7 +1633,7 @@
    },
    "ExtracellularFluidVolume": {
     "ScalarVolume": {
-     "Value": 8257.6471121327322,
+     "Value": 8257.647112132734,
      "Unit": "mL"
     }
    },
@@ -1666,7 +1666,7 @@
   "RestingBloodGlucose_mg_Per_mL": 0.95048771594231152,
   "RestingBloodLipid_mg_Per_mL": 0.99906366840869421,
   "RestingBloodInsulin_mg_Per_mL": 4.0617932502823869e-07,
-  "RestingFluidMass_kg": 36.45666341761693
+  "RestingFluidMass_kg": 36.456663417616937
  },
  "Environment": {
   "Common": {
@@ -103583,7 +103583,7 @@
    },
    "MassInBody": {
     "ScalarMass": {
-     "Value": 351140.91243436863,
+     "Value": 351140.91243436874,
      "Unit": "ug"
     }
    },
@@ -103595,7 +103595,7 @@
    },
    "MassInTissue": {
     "ScalarMass": {
-     "Value": 303961.63066596084,
+     "Value": 303961.63066596095,
      "Unit": "ug"
     }
    },
@@ -105789,7 +105789,7 @@
    },
    "MassInBody": {
     "ScalarMass": {
-     "Value": 1010721.9958077939,
+     "Value": 1010721.9958077938,
      "Unit": "ug"
     }
    },
@@ -105801,7 +105801,7 @@
    },
    "MassInTissue": {
     "ScalarMass": {
-     "Value": 265196.02746025211,
+     "Value": 265196.02746025205,
      "Unit": "ug"
     }
    },
@@ -106625,7 +106625,7 @@
    },
    "MassInTissue": {
     "ScalarMass": {
-     "Value": 63137.936538595044,
+     "Value": 63137.936538595051,
      "Unit": "ug"
     }
    },
@@ -106746,7 +106746,7 @@
    },
    "MassInBody": {
     "ScalarMass": {
-     "Value": 94593678.698798388,
+     "Value": 94593678.698798373,
      "Unit": "ug"
     }
    },
@@ -106758,7 +106758,7 @@
    },
    "MassInTissue": {
     "ScalarMass": {
-     "Value": 93792669.044757426,
+     "Value": 93792669.044757411,
      "Unit": "ug"
     }
    },
@@ -110099,7 +110099,7 @@
     },
     "Fat": {
      "ScalarMass": {
-      "Value": 17,
+      "Value": 27,
       "Unit": "g"
      }
     },
@@ -110111,7 +110111,7 @@
     },
     "Protein": {
      "ScalarMass": {
-      "Value": 12,
+      "Value": 20,
       "Unit": "g"
      }
     },
@@ -110341,7 +110341,7 @@
      "Unit": "L"
     }
    },
-   "MinimumAllowableInpiratoryAndExpiratoryPeriod": {
+   "MinimumAllowableInspiratoryAndExpiratoryPeriod": {
     "ScalarTime": {
      "Value": 0.25,
      "Unit": "s"

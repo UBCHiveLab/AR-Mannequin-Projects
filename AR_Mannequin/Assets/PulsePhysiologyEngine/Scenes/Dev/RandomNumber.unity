@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4457569, g: 0.49547088, b: 0.57427907, a: 1}
+  m_IndirectSpecularColor: {r: 0.4457572, g: 0.495471, b: 0.5742798, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -191,7 +191,7 @@ LineRenderer:
   - {x: -80, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.45
+    widthMultiplier: 0.9
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -209,8 +209,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.02745098, b: 1, a: 1}
-      key1: {r: 0, g: 0.02745098, b: 1, a: 1}
+      key0: {r: 0.015686275, g: 0, b: 1, a: 1}
+      key1: {r: 0.015686275, g: 0, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -253,17 +253,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 212579124}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eaae667ea3624bfea5015979b2fda5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 95be0a7f3ee49f7438177e97c70f28b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 2005245676}
   dataFieldIndex: 0
-  thickness: 0.5
-  color: {r: 0, g: 0.029119492, b: 1, a: 1}
+  thickness: 1
+  color: {r: 0.016734123, g: 0, b: 1, a: 1}
   traceInitialLine: 1
   yMin: 0
-  yMax: 150
+  yMax: 100
   xRange: 10
+--- !u!114 &1208552005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c300108eb8c4b144a3c57c88e71fca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fields:
+  - Random
+  timeStampList:
+    list: []
+  valuesTable:
+  - list: []
 --- !u!1 &1257866050
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +399,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1323751495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219cc7226c69e4c579a98c358c94df1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 617b61f1695796740b4ec9739cb4040b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 2005245676}
@@ -390,7 +408,7 @@ MonoBehaviour:
   suffix: 
   multiplier: 1
   decimals: 0
-  frequency: 5
+  frequency: 0
 --- !u!114 &1323751498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,8 +427,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 200
@@ -669,8 +685,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -804,24 +818,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1774809306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b542d476b1044fe5a410c288650ba2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fields:
-  - Random
-  timeStampList:
-    list: []
-  valuesTable:
-  - list: []
 --- !u!1 &2005245675
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,15 +844,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2005245675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a0c47b2db954da9bf91b2c15fa7b09, type: 3}
+  m_Script: {fileID: 11500000, guid: 873d5da9ce6fe9548ba538ada41e0a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 1774809306}
+  data: {fileID: 1208552005}
   minValue: 0
   maxValue: 100
-  variability: 0.2
+  variability: 0.1
   frequency: 20
-  previousValue: 58.707443
+  previousValue: 0
 --- !u!4 &2005245677
 Transform:
   m_ObjectHideFlags: 0

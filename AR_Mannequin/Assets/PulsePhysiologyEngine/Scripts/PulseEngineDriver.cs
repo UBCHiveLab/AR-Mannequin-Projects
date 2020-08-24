@@ -86,7 +86,7 @@ public class PulseEngineDriver : PulseDataSource
   {
     // Ensure we only read data if the application is playing
     // and we have a state file to initialize the engine with
-    if (!Application.isPlaying || initialStateFile == null)
+    if (!Application.isPlaying)
       return;
 
     // Allocate PulseEngine with path to logs and needed data files
@@ -99,33 +99,22 @@ public class PulseEngineDriver : PulseDataSource
 
     SEDataRequestManager data_mgr = new SEDataRequestManager(data_requests);
 
-    if (true)
+    // NOTE, there are other ways to initialize the engine, see here
+    // https://gitlab.kitware.com/physiology/engine/-/blob/3.x/src/csharp/howto/HowTo_EngineUse.cs
+
+    // Initialize engine state from tje state file content
+    if (initialStateFile != null)
     {
-      // Initialize engine state from the state file content
       if (!engine.SerializeFromString(initialStateFile.text, data_mgr, serializationFormat))
         Debug.unityLogger.LogError("PulsePhysiologyEngine", "Unable to load state file " + initialStateFile);
-      // NOTE, there are other ways to initialize the engine, see here
-      // https://gitlab.kitware.com/physiology/engine/-/blob/3.x/src/csharp/howto/HowTo_EngineUse.cs
     }
     else
     {
-      // If you want to create a new pulse patient you will need to have copied pulse data files into a folder under the 'StreamingAssets' folder in  your asset
-      SEPatientConfiguration cfg = new SEPatientConfiguration();
-      // Grab the patient and fill in some data
-      SEPatient patient = cfg.GetPatient();
-      patient.SetName("Owen");
-      patient.SetSex(SEPatient.eSex.Male);
-      patient.GetAge().SetValue(30, TimeUnit.yr);
-      patient.GetWeight().SetValue(200, MassUnit.lb);
-      patient.GetHeight().SetValue(74, LengthUnit.inch);
-      patient.GetBodyFatFraction().SetValue(0.16);
-      patient.GetSystolicArterialPressureBaseline().SetValue(120, PressureUnit.mmHg);
-      patient.GetDiastolicArterialPressureBaseline().SetValue(72, PressureUnit.mmHg);
-      patient.GetHeartRateBaseline().SetValue(67, FrequencyUnit.Per_min);
-      patient.GetRespirationRateBaseline().SetValue(12, FrequencyUnit.Per_min);
-      cfg.SetDataRootDir(Application.streamingAssetsPath + "/PulseDataFiles/");
-      if (!engine.InitializeEngine(cfg, data_mgr))
-        Debug.unityLogger.LogError("PulsePhysiologyEngine", "Unable to create patient");
+      // You do not have to use the Editor control if you don't want to,
+      // You could simply specify a file on disk via use of the Streaming Assets folder
+      string state = Application.streamingAssetsPath + "/Pulse/StandardMale@0s.pbb";
+      if (!engine.SerializeFromFile(state, data_mgr))
+        Debug.unityLogger.LogError("PulsePhysiologyEngine", "Unable to load state file " + state);
     }
 
     previousTime = Time.time;
