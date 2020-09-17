@@ -27,15 +27,15 @@ RectTransform:
   m_GameObject: {fileID: 2053333157503996844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.33556026, y: 0.9975257, z: 0.69142}
   m_Children: []
   m_Father: {fileID: 300131681271862237}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000038146973, y: 0.0000076293945}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 50.6}
+  m_SizeDelta: {x: 143.6, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9177267438650776488
 CanvasRenderer:
@@ -70,13 +70,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
+    m_Alignment: 4
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Mauricio
 --- !u!1 &2054271112319025402
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +106,7 @@ RectTransform:
   m_GameObject: {fileID: 2054271112319025402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.73, y: 1, z: 1}
+  m_LocalScale: {x: 1.8165, y: 1.0105135, z: 1}
   m_Children:
   - {fileID: 4639289803646735061}
   m_Father: {fileID: 0}
