@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Vuforia;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// Created by Kimberly Burke, 2019
@@ -16,6 +17,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
 {
 
     [SerializeField] private Button connectButton;
+    [SerializeField] private Button testconnectButton;
     [SerializeField] private Button startButton;
     [SerializeField] private InputField roomInput;
     [SerializeField] private Text textInput;
@@ -23,6 +25,10 @@ public class NetworkController : MonoBehaviourPunCallbacks
     [SerializeField] private Text userNameInput;
 
     private string roomName, userId;
+    public Sprite buttonSpriteDisabled;
+    public Sprite buttonSpriteEnabled;
+    public Sprite buttonSpriteHover;
+    public Sprite buttonSpriteActive;
 
 
     /******************************************************
@@ -47,6 +53,8 @@ public class NetworkController : MonoBehaviourPunCallbacks
             startButton.interactable = true;
             roomInput.interactable = true;
             connectButton.interactable = false;
+            testconnectButton.image.sprite = buttonSpriteEnabled;
+            testconnectButton.GetComponentInChildren<Text>().text = "Connecting";
         }
         else
         {
@@ -55,6 +63,8 @@ public class NetworkController : MonoBehaviourPunCallbacks
             startButton.interactable = false;
             roomInput.interactable = false;
             connectButton.interactable = true;
+            testconnectButton.image.sprite = buttonSpriteEnabled;
+            testconnectButton.GetComponentInChildren<Text>().text = "Connect";
         }
     }
     private void SetUserID()
@@ -65,6 +75,10 @@ public class NetworkController : MonoBehaviourPunCallbacks
         authValues.UserId = userId;
         PhotonNetwork.AuthValues = authValues;
     }
+    public void OnButtonHover()
+    {
+        Debug.Log("Pointer");
+    }
 
     #region PUN Connection
     public void ConnectToMaster()
@@ -74,6 +88,8 @@ public class NetworkController : MonoBehaviourPunCallbacks
         connectButton.interactable = false;
         connectButton.transform.GetChild(0).gameObject.SetActive(false);
         connectButton.transform.GetChild(1).gameObject.SetActive(true);
+        testconnectButton.image.sprite = buttonSpriteDisabled;
+        testconnectButton.GetComponentInChildren<Text>().text = "Connecting";
     }
 
     public override void OnConnectedToMaster()
@@ -86,6 +102,9 @@ public class NetworkController : MonoBehaviourPunCallbacks
             connectButton.transform.GetChild(2).gameObject.SetActive(true);
             connectButton.interactable = false;
             roomInput.interactable = true;
+            testconnectButton.image.sprite = buttonSpriteEnabled;
+            testconnectButton.GetComponentInChildren<Text>().text = "Connected";
+            testconnectButton.gameObject.SetActive(false);
         }
         Debug.Log("We are now connected to the " + PhotonNetwork.CloudRegion + " server!");
         GameStateUtility.SetConnectionStatus(true); 
