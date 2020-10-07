@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: de62426536df0dc43b25e2c86c4138ec
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Mulish
+  fontNames:
+  - Mulish
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ea0be1711d8c37b46aac93d058c03f96, type: 3}
+  - {fileID: 12800000, guid: 8713ca815245e5f4db153041dd71329b, type: 3}
+  - {fileID: 12800000, guid: 33ac64d29b4437f41b989049f7d8c912, type: 3}
+  - {fileID: 12800000, guid: b59725c5db80340468a5498c0384c70c, type: 3}
+  - {fileID: 12800000, guid: 3c97bf46d9270114985ab52c8a521e9a, type: 3}
+  - {fileID: 12800000, guid: fea51da8510f6494a9f9fa4af55a6751, type: 3}
+  - {fileID: 12800000, guid: 38c11a39888130043b30e731ace09ace, type: 3}
+  - {fileID: 12800000, guid: 98d29db9f0a3879448dca46871b17d11, type: 3}
+  - {fileID: 12800000, guid: 68080df9cfa81de4b9a67f4bee2167e9, type: 3}
+  - {fileID: 12800000, guid: 20c6004a8b9376a43b467bf0f620b7ef, type: 3}
+  - {fileID: 12800000, guid: 2d7fb8eaa5f9f314cb5c520849339a39, type: 3}
+  - {fileID: 12800000, guid: ae9d2ffa55a44ac49bda32548e12a42a, type: 3}
+  - {fileID: 12800000, guid: ae6faf5b051b3dd438e288f17a8506a6, type: 3}
+  - {fileID: 12800000, guid: 385566bb3ec54db46bb67921ef8567ac, type: 3}
+  - {fileID: 12800000, guid: 0500b29de9074dc43bba5fb59dfdc981, type: 3}
+  - {fileID: 12800000, guid: 8fd7fb5f5ae4e694699a8ec71eb3b6e8, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

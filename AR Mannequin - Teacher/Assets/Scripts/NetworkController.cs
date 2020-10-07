@@ -173,6 +173,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         base.OnJoinedLobby();
+        PhotonNetwork.NickName = "Teacher";
         Debug.Log("Joined lobby..." + PhotonNetwork.InLobby);
         Debug.Log("Player count: " + PhotonNetwork.CountOfPlayers);
 

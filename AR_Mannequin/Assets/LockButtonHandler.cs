@@ -28,9 +28,8 @@ public class LockButtonHandler : MonoBehaviour
     public void LockMechanism()
     {
         Text txt = transform.Find("Text").GetComponent<Text>();
-        Image img = transform.Find("Image").GetComponent<Image>();
         ColorBlock colors = GetComponent<Button>().colors;
-        Color32 unpressed = new Color32(255,255,255,255);
+        Color32 unpressed = new Color32(0,0,0,255);
         Color32 locked = new Color32(255,0,0,100);
         if (isItLocked == false)
         {   
@@ -38,8 +37,9 @@ public class LockButtonHandler : MonoBehaviour
             //txt.text = "Locked";
             colors.normalColor = locked;
             colors.highlightedColor = locked;
+            colors.selectedColor = locked;
             button.colors = colors;
-            img.sprite = lockedSprite;
+            button.image.sprite = lockedSprite;
             scaleScript.enabled = false;
             dragScript.enabled = false;
             rotateScript.enabled = false;
@@ -52,8 +52,9 @@ public class LockButtonHandler : MonoBehaviour
             //txt.text = "Unlocked";
             colors.normalColor = unpressed;
             colors.highlightedColor = unpressed;
+            colors.selectedColor = unpressed;
             button.colors = colors;
-            img.sprite = unlockedSprite;
+            button.image.sprite = unlockedSprite;
             scaleScript.enabled = true;
             dragScript.enabled = true;
             rotateScript.enabled = true;

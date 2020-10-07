@@ -23,7 +23,7 @@ public class UpdateECG : MonoBehaviour
     public static bool isARPlaced;
     public static bool isECGHookedUp;
 
-    private const string defaultInactiveValue = "-?-";
+    private const string defaultInactiveValue = "00";
 
     // Start is called before the first frame update
     void Awake()

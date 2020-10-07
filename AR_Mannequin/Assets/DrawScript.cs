@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DrawScript : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class DrawScript : MonoBehaviour
     public float waveAmplitude;
     public float lenght;
     public float speed;
+    public GameObject speedNumber;
+    private int ratioSpeed;
 
     void Start()
     {
@@ -16,6 +19,12 @@ public class DrawScript : MonoBehaviour
     }
 
     private void Update() {
+        try
+        {
+           ratioSpeed = int.Parse(speedNumber.GetComponent<Text>().text);
+        }
+        catch { }
+        speed = 2 * ((float)ratioSpeed / 86);
         DrawTravellingSineWave(new Vector3(0,0,0), waveAmplitude, lenght, speed);
     }
 
