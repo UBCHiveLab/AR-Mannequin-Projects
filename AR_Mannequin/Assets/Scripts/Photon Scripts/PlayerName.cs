@@ -11,7 +11,7 @@ public class PlayerName : MonoBehaviour
 
     public void OnTextFieldChange()
     {
-        if (firstname.text.Length > 2 && lastname.text.Length > 2)
+        if (firstname.text.Length > 0 && lastname.text.Length > 0)
         {
             setNameBtn.interactable = true;
         }
