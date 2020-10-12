@@ -48,5 +48,7 @@ public static class EventCodeUtility {
 
     public const byte SKIN_COLOR = 30;
 
+    public const byte STUDENT_MESSAGE = 31;
 
+    public const byte QUIT_SESSION = 254;
 }

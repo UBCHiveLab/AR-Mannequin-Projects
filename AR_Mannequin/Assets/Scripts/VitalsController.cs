@@ -18,12 +18,30 @@ public class VitalsController : MonoBehaviour
     private Button vitalButton;
     private Toggle vitalToggle;
 
+    private StudentCommandSend cmdSend;
+    private object newObject;
+
+    private void Start()
+    {
+        cmdSend = StudentCommandSend.Instance;
+    }
+    private void SendMessageCommand(string message)
+    {
+        newObject = message;
+        Command cmd = new Command((byte)EventCodeUtility.STUDENT_MESSAGE, new object[] { newObject });
+        if (cmdSend != null)
+            cmdSend.ApplyCommand(cmd);
+    }
+
     public void InvokeActionBeforeTimer()
     {
+        //send log message to server
+        SendMessageCommand("started " + vitalAction.ToName() + ". Finish in " + countdownTime.ToString() + " seconds");
         vitalActionBeforeTimer.Invoke();
     }
     public void InvokeActionAfterTimer()
     {
+        SendMessageCommand("did " + vitalAction.ToName()+" successfully.");
         vitalActionAfterTimer.Invoke();
         DisableButton();
     }
