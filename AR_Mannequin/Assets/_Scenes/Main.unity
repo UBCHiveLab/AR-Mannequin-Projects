@@ -6683,48 +6683,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042808651}
   m_CullTransparentMesh: 0
---- !u!114 &1048290964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c300108eb8c4b144a3c57c88e71fca4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fields:
-  - Simulation Time(s)
-  - Lead3ElectricPotential(mV)
-  - "HeartRate(1\u2215min)"
-  - ArterialPressure(mmHg)
-  - MeanArterialPressure(mmHg)
-  - SystolicArterialPressure(mmHg)
-  - DiastolicArterialPressure(mmHg)
-  - OxygenSaturation()
-  - EndTidalCarbonDioxidePressure(mmHg)
-  - "RespirationRate(1\u2215min)"
-  - SkinTemperature(degC)
-  - Carina-CarbonDioxide-PartialPressure(mmHg)
-  - BloodVolume(mL)
-  timeStampList:
-    list: []
-  valuesTable:
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
 --- !u!1 &1065763954
 GameObject:
   m_ObjectHideFlags: 0
@@ -9073,6 +9031,10 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1072963177, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: countdownTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1072963179, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -9131,6 +9093,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: -1264
       objectReference: {fileID: 0}
+    - target: {fileID: 1100308952, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: countdownTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1100308954, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -9169,6 +9135,10 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1759416847, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: countdownTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1759416849, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -9177,6 +9147,10 @@ PrefabInstance:
     - target: {fileID: 1759416849, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
       propertyPath: m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928337371, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: countdownTime
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1928337373, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
       propertyPath: m_Sprite
@@ -9206,6 +9180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 91700324232961795, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: countdownTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 146993161818895821, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
@@ -9250,6 +9229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2004780548904184986, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: countdownTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3397219935991304106, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
@@ -9450,6 +9434,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 161.1001
       objectReference: {fileID: 0}
+    - target: {fileID: 5235900646780300594, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: countdownTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5546855945346738264, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
       propertyPath: m_Sprite
@@ -9482,6 +9471,11 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6321549065168349573, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: countdownTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6776750929657896136, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
       propertyPath: m_Sprite
@@ -9492,6 +9486,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851569720508292415, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: countdownTime
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001846211308046294, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: countdownTime
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7167817358286483462, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
@@ -9537,6 +9541,11 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8133864656093000008, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: countdownTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8253425452893599068, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
       propertyPath: m_Sprite
@@ -9581,6 +9590,11 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8534967899888884125, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: countdownTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8542291017768407410, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
       propertyPath: m_Sprite
@@ -9591,6 +9605,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566915918997678218, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: countdownTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8994707962581671151, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: countdownTime
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
@@ -9623,7 +9647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784abafd9ac83194a9e9aaa5f1c25ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 1048290964}
+  data: {fileID: 1379881731}
   initialStateFile: {fileID: 4900000, guid: 61ab5c55f86d65a498e79bce05f92e9f, type: 3}
   serializationFormat: 1
   timeStep: 0.02
@@ -10436,6 +10460,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374156118}
   m_CullTransparentMesh: 0
+--- !u!114 &1379881731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c300108eb8c4b144a3c57c88e71fca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fields:
+  - Simulation Time(s)
+  - Lead3ElectricPotential(mV)
+  - "HeartRate(1\u2215min)"
+  - ArterialPressure(mmHg)
+  - MeanArterialPressure(mmHg)
+  - SystolicArterialPressure(mmHg)
+  - DiastolicArterialPressure(mmHg)
+  - OxygenSaturation()
+  - EndTidalCarbonDioxidePressure(mmHg)
+  - "RespirationRate(1\u2215min)"
+  - SkinTemperature(degC)
+  - Carina-CarbonDioxide-PartialPressure(mmHg)
+  - BloodVolume(mL)
+  timeStampList:
+    list: []
+  valuesTable:
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
 --- !u!1 &1380559873
 GameObject:
   m_ObjectHideFlags: 0
@@ -11109,6 +11175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1432210132}
+  - component: {fileID: 1432210133}
   m_Layer: 0
   m_Name: Vitals Monitor
   m_TagString: Untagged
@@ -11132,6 +11199,19 @@ Transform:
   m_Father: {fileID: 4570077010441018}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -38.734, z: 0}
+--- !u!114 &1432210133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432210131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248f8fca544b849088952f06823bd039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ecgMonitor: {fileID: 1432210131}
 --- !u!1 &1551035175
 GameObject:
   m_ObjectHideFlags: 0

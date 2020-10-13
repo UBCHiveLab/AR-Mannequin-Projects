@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ECGToggle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private GameObject ecgMonitor;
+
+    private void ActiveBehaviour(GameObject ecgMonitor)
     {
-        
+        ecgMonitor.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    // default behaviour
+    private void InactiveBehaviour(GameObject ecgMonitor)
     {
-        
+        ecgMonitor.SetActive(false);
     }
 }

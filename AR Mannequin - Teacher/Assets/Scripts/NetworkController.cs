@@ -69,6 +69,12 @@ public class NetworkController : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings(); //Connects to Photon master servers
         //Other ways to make a connection can be found here: https://doc-api.photonengine.com/en/pun/v2/class_photon_1_1_pun_1_1_photon_network.html
         connectButton.interactable = false;
+        if (PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.Disconnect();
+        }
+        PhotonNetwork.ConnectToRegion("usw");
+        PhotonNetwork.ConnectUsingSettings();
         connectButton.transform.GetChild(0).gameObject.SetActive(false);
         connectButton.transform.GetChild(1).gameObject.SetActive(true);
     }

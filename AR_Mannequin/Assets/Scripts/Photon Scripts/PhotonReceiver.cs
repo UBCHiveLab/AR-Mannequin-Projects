@@ -162,6 +162,7 @@ public class PhotonReceiver : MonoBehaviour {
                 //SceneManager.LoadScene(0);
                 break;
             case EventCodeUtility.ECG_TOGGLE:
+                Debug.Log("ECG Toggled");
                 InvokeECGHookUp((bool)datas[0]);
                 break;
             default:
