@@ -8434,7 +8434,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15.999939, y: 0}
+  m_AnchoredPosition: {x: -16, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226715538
@@ -9136,8 +9136,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1759416847, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: vitalActionAfterTimer.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759416847, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
       propertyPath: countdownTime
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759416847, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: vitalActionAfterTimer.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759416847, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: vitalActionAfterTimer.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759416847, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: vitalActionAfterTimer.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1290165358}
+    - target: {fileID: 1759416847, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: vitalActionAfterTimer.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeToggleValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759416847, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: vitalActionAfterTimer.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1759416849, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
       propertyPath: m_Sprite
@@ -9618,6 +9642,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+--- !u!114 &1290165358 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1759416846, guid: 33b3057cb853bd64aba6effb026e25f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1290165357}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e699505a3104977ab7cb200ad2abdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1303452190
 GameObject:
   m_ObjectHideFlags: 0
@@ -9647,7 +9683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784abafd9ac83194a9e9aaa5f1c25ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 1379881731}
+  data: {fileID: 2017182724}
   initialStateFile: {fileID: 4900000, guid: 61ab5c55f86d65a498e79bce05f92e9f, type: 3}
   serializationFormat: 1
   timeStep: 0.02
@@ -10460,48 +10496,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374156118}
   m_CullTransparentMesh: 0
---- !u!114 &1379881731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c300108eb8c4b144a3c57c88e71fca4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fields:
-  - Simulation Time(s)
-  - Lead3ElectricPotential(mV)
-  - "HeartRate(1\u2215min)"
-  - ArterialPressure(mmHg)
-  - MeanArterialPressure(mmHg)
-  - SystolicArterialPressure(mmHg)
-  - DiastolicArterialPressure(mmHg)
-  - OxygenSaturation()
-  - EndTidalCarbonDioxidePressure(mmHg)
-  - "RespirationRate(1\u2215min)"
-  - SkinTemperature(degC)
-  - Carina-CarbonDioxide-PartialPressure(mmHg)
-  - BloodVolume(mL)
-  timeStampList:
-    list: []
-  valuesTable:
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
 --- !u!1 &1380559873
 GameObject:
   m_ObjectHideFlags: 0
@@ -11175,7 +11169,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1432210132}
-  - component: {fileID: 1432210133}
   m_Layer: 0
   m_Name: Vitals Monitor
   m_TagString: Untagged
@@ -11199,19 +11192,6 @@ Transform:
   m_Father: {fileID: 4570077010441018}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -38.734, z: 0}
---- !u!114 &1432210133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1432210131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 248f8fca544b849088952f06823bd039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ecgMonitor: {fileID: 1432210131}
 --- !u!1 &1551035175
 GameObject:
   m_ObjectHideFlags: 0
@@ -15286,6 +15266,48 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2017182724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c300108eb8c4b144a3c57c88e71fca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fields:
+  - Simulation Time(s)
+  - Lead3ElectricPotential(mV)
+  - "HeartRate(1\u2215min)"
+  - ArterialPressure(mmHg)
+  - MeanArterialPressure(mmHg)
+  - SystolicArterialPressure(mmHg)
+  - DiastolicArterialPressure(mmHg)
+  - OxygenSaturation()
+  - EndTidalCarbonDioxidePressure(mmHg)
+  - "RespirationRate(1\u2215min)"
+  - SkinTemperature(degC)
+  - Carina-CarbonDioxide-PartialPressure(mmHg)
+  - BloodVolume(mL)
+  timeStampList:
+    list: []
+  valuesTable:
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
 --- !u!1001 &2040652027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16910,6 +16932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4570077010441018}
   - component: {fileID: 6985928956240436304}
+  - component: {fileID: 1089945339142577}
   m_Layer: 0
   m_Name: UIPanel
   m_TagString: Untagged
@@ -16917,6 +16940,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1089945339142577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089945339142576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248f8fca544b849088952f06823bd039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ecgMonitor: {fileID: 1432210131}
 --- !u!1 &1129744115116898
 GameObject:
   m_ObjectHideFlags: 0
