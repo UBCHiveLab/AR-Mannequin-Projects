@@ -9214,7 +9214,7 @@ PrefabInstance:
       objectReference: {fileID: 1242590866}
     - target: {fileID: 1748783591, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
       propertyPath: vitalActionAfterTimer.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1748783591, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
       propertyPath: vitalActionAfterTimer.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
