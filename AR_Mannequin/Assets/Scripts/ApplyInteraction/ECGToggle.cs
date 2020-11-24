@@ -11,12 +11,11 @@ public class ECGToggle : MonoBehaviour
     {
         EventManager.Instance.ECGHookUpEvent += ToggleECG;
     }
-    /*
+
     private void OnDisable()
     {
         EventManager.Instance.ECGHookUpEvent -= ToggleECG;
     }
-    */
 
     private void ToggleECG(bool status)
     {
