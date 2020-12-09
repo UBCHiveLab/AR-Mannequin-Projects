@@ -53,7 +53,7 @@ public class VitalsController : MonoBehaviour
     }
         public void InvokeChestCompressionActionAfterTimer()
     {
-        SendMessageCommand("did " + countdownTime.ToString() + " seconds of" +  vitalAction.ToName() );
+        SendMessageCommand("did " + countdownTime.ToString() + " seconds of " +  vitalAction.ToName() );
         vitalActionAfterTimer.Invoke();
         DisableButton();
     }
