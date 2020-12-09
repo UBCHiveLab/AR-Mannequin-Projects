@@ -191,9 +191,9 @@ public class VitalsManager : Singleton<VitalsManager>
     #region TIMER_RELATED_METHODS
     public void OnVitalButtonClick(VitalsController vitalsController)
     {
-        if (vitalsController.name == "Chest Compression")
+        if (vitalsController.name == "Chest Compression" || vitalsController.name == "BVM")
         {
-            StartCoroutine(ChestTimer(vitalsController));
+            StartCoroutine(HoldTimer(vitalsController));
         }
         else
         {
@@ -241,7 +241,7 @@ public class VitalsManager : Singleton<VitalsManager>
         TurnOnCurrentVital();
     }
 
-    private IEnumerator ChestTimer(VitalsController vitalsController)
+    private IEnumerator HoldTimer(VitalsController vitalsController)
     {
         // set countdown time with corresponding time
         float countdown = 0;
@@ -251,6 +251,7 @@ public class VitalsManager : Singleton<VitalsManager>
         isInTimer = true;
 
         TurnOffAllVitalUI();
+        chestCompressionButton.GetComponentInChildren<Text>().text = ("Hold button for " + vitalsController.name);
         chestCompressionButton.gameObject.SetActive(true);
         // invoke actions that should be called before timer
         // this is usually to send message to server
