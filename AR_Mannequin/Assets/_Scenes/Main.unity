@@ -9792,6 +9792,11 @@ PrefabInstance:
       propertyPath: countdownTime
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3077581906043738055, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: m_Text
+      value: Temperature
+      objectReference: {fileID: 0}
     - target: {fileID: 3397219935991304106, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
       propertyPath: m_Sprite
@@ -10030,6 +10035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 161.1001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993129318440970885, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: m_Name
+      value: Temperature
       objectReference: {fileID: 0}
     - target: {fileID: 5235900646780300594, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
@@ -10321,7 +10331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784abafd9ac83194a9e9aaa5f1c25ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 2020401527}
+  data: {fileID: 2013034032}
   initialStateFile: {fileID: 4900000, guid: 61ab5c55f86d65a498e79bce05f92e9f, type: 3}
   serializationFormat: 1
   timeStep: 0.02
@@ -15983,7 +15993,7 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &2020401527
+--- !u!114 &2013034032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
