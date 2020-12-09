@@ -110,9 +110,14 @@ public class VitalsManager : Singleton<VitalsManager>
     private bool isVitalUIOn = false;
     [SerializeField]
     private Text timerText,actionNotification;
+    [SerializeField]
+    private HoldButton holdButton;
+    [SerializeField]
+    private Button chestCompressionButton;
+
 
     //static Dictionary<UserPosition, Vitals[]> positionVitalPairs=new Dictionary<UserPosition, Vitals[]>();
-    
+
     private UserPosition currentUserPosition = UserPosition.none;
 
     void Awake()
@@ -186,7 +191,14 @@ public class VitalsManager : Singleton<VitalsManager>
     #region TIMER_RELATED_METHODS
     public void OnVitalButtonClick(VitalsController vitalsController)
     {
-        StartCoroutine(Timer(vitalsController));
+        if (vitalsController.name == "Chest Compression")
+        {
+            StartCoroutine(ChestTimer(vitalsController));
+        }
+        else
+        {
+            StartCoroutine(Timer(vitalsController));
+        }
         Debug.Log(vitalsController);
     }
     private IEnumerator Timer(VitalsController vitalsController)
@@ -226,6 +238,40 @@ public class VitalsManager : Singleton<VitalsManager>
         // this is for action that actually should happen
         vitalsController.InvokeActionAfterTimer();
         // re-turn on current vital buttons
+        TurnOnCurrentVital();
+    }
+
+    private IEnumerator ChestTimer(VitalsController vitalsController)
+    {
+        // set countdown time with corresponding time
+        float countdown = 0;
+        // determine whether the countdown time is more than a minute
+        string timerFormat = countdown > 60 ? "0:00.00" : "00.00";
+
+        isInTimer = true;
+
+        TurnOffAllVitalUI();
+        chestCompressionButton.gameObject.SetActive(true);
+        // invoke actions that should be called before timer
+        // this is usually to send message to server
+        while (holdButton.buttonPressed == false)
+        {
+            yield return null;
+        }
+        vitalsController.InvokeChestCompressionActionBeforeTimer();
+        Debug.Log("Timer Starting");
+        while (holdButton.buttonPressed == true)
+        {
+            countdown += Time.deltaTime;
+            yield return null;
+        }
+        isInTimer = false;
+        vitalsController.countdownTime = countdown;
+        // invoke actions that should be called after timer
+        // this is for action that actually should happen
+        vitalsController.InvokeChestCompressionActionAfterTimer();
+        // re-turn on current vital buttons
+        chestCompressionButton.gameObject.SetActive(false);
         TurnOnCurrentVital();
     }
     // action notification text disappear in a second after the countdown ends

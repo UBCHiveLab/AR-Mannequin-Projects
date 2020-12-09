@@ -39,9 +39,21 @@ public class VitalsController : MonoBehaviour
         SendMessageCommand("started " + vitalAction.ToName() + ". Finish in " + countdownTime.ToString() + " seconds");
         vitalActionBeforeTimer.Invoke();
     }
+    public void InvokeChestCompressionActionBeforeTimer()
+    {
+        //send log message to server
+        SendMessageCommand("started " + vitalAction.ToName());
+        vitalActionBeforeTimer.Invoke();
+    }
     public void InvokeActionAfterTimer()
     {
         SendMessageCommand("did " + vitalAction.ToName()+" successfully.");
+        vitalActionAfterTimer.Invoke();
+        DisableButton();
+    }
+        public void InvokeChestCompressionActionAfterTimer()
+    {
+        SendMessageCommand("did " + countdownTime.ToString() + " seconds of" +  vitalAction.ToName() );
         vitalActionAfterTimer.Invoke();
         DisableButton();
     }
