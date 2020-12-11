@@ -32,7 +32,7 @@ public class BodyPartsCaster : MonoBehaviour
             //get the nearset raycast hit
             RaycastHit nearestHit = hits.OrderBy(hit => hit.distance).First();
 
-            VitalsManager.Instance.VitalsUIControlBasedOnUserPosition(ParseColliderName(nearestHit.transform.name));
+            VitalsManager.Instance.VitalsUIControlBasedOnUserPosition(ParseColliderName(nearestHit.transform.tag));
             
         }
         else
@@ -42,11 +42,11 @@ public class BodyPartsCaster : MonoBehaviour
         
     }
 
-
-    private UserPosition ParseColliderName(string colliderName)
+    // Parse Body parts position based on its tag
+    private UserPosition ParseColliderName(string colliderTagName)
     {
         UserPosition userPosition;
-        string positionName = colliderName.Split('_')[1];
+        string positionName = colliderTagName.Split('_')[1];
         
         if(System.Enum.TryParse<UserPosition>( positionName, true, out userPosition))
         {
