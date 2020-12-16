@@ -31,6 +31,7 @@ public class UpdateECG : MonoBehaviour
         if (EventManager.Instance != null)
         {
             EventManager.Instance.ECGHookUpEvent += ECGHookUp;
+            EventManager.Instance.CuffHookUpEvent += ECGHookUp;
             EventManager.Instance.ECGUpdateEvent += UpdateECGValues;
             EventManager.Instance.ManikinPositionedEvent += HandleManikinPositioned;
         }

@@ -98,6 +98,10 @@ public class EventManager: Singleton<EventManager>{
     public delegate void ECGHookUpDelegate(bool status);
     public event ECGHookUpDelegate ECGHookUpEvent;
 
+
+    public delegate void CuffHookUpDelegate(bool status);
+    public event CuffHookUpDelegate CuffHookUpEvent;
+
     public void publishVuforiaModelEvent(string foundOrLost, string modelType, Transform parentTransform)
     {
         Debug.Log("publish vuforia model event");
@@ -326,6 +330,14 @@ public class EventManager: Singleton<EventManager>{
         {
             Debug.Log("ECG Hook Up status: " + status.ToString());
             ECGHookUpEvent(status);
+        }
+    }
+    public void publishCuffHookUpEvent(bool status)
+    {
+        if (CuffHookUpEvent != null)
+        {
+            Debug.Log("Cuff Hook Up status: " + status.ToString());
+            CuffHookUpEvent(status);
         }
     }
 }

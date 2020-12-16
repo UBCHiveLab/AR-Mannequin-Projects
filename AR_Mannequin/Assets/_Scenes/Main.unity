@@ -727,6 +727,18 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!114 &87320732 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6111413716561697362, guid: 33b3057cb853bd64aba6effb026e25f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1290165357}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &105638884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,17 +1261,6 @@ MonoBehaviour:
   onValueChangedInverse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4174042714975501723}
-        m_MethodName: set_mute
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6407222590980704193}
         m_MethodName: set_mute
         m_Mode: 0
@@ -3418,48 +3419,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799834218}
   m_CullTransparentMesh: 0
---- !u!114 &828806819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c300108eb8c4b144a3c57c88e71fca4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fields:
-  - Simulation Time(s)
-  - Lead3ElectricPotential(mV)
-  - "HeartRate(1\u2215min)"
-  - ArterialPressure(mmHg)
-  - MeanArterialPressure(mmHg)
-  - SystolicArterialPressure(mmHg)
-  - DiastolicArterialPressure(mmHg)
-  - OxygenSaturation()
-  - EndTidalCarbonDioxidePressure(mmHg)
-  - "RespirationRate(1\u2215min)"
-  - SkinTemperature(degC)
-  - Carina-CarbonDioxide-PartialPressure(mmHg)
-  - BloodVolume(mL)
-  timeStampList:
-    list: []
-  valuesTable:
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
-  - list: []
 --- !u!1 &873506646
 GameObject:
   m_ObjectHideFlags: 0
@@ -6567,6 +6526,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -38.734, z: 0}
+--- !u!1 &1268674202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1076106757907062182, guid: 33b3057cb853bd64aba6effb026e25f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1290165357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1268674204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268674202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a26dd3ddc783140b7e40dc33e2a02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onValueChangedInverse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4174042714975501723}
+        m_MethodName: set_mute
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1268674209 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4118625179596786063, guid: 33b3057cb853bd64aba6effb026e25f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1290165357}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268674202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1271869173
 GameObject:
   m_ObjectHideFlags: 0
@@ -6782,6 +6785,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 360706058, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 360706061, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
       propertyPath: vitalActionAfterTimer.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -6927,6 +6934,10 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1123898047, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1167844998, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6942,6 +6953,14 @@ PrefabInstance:
     - target: {fileID: 1284473808, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 161.1001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352909825, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352909826, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
+      propertyPath: m_Text
+      value: R Lung Sound
       objectReference: {fileID: 0}
     - target: {fileID: 1504698401, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
       propertyPath: mainCamera
@@ -7189,6 +7208,11 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 286619562879886328, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: vitalAction
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1027361888963214235, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
       propertyPath: m_Sprite
@@ -7259,6 +7283,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4118625179596786063, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4118625179596786063, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 19787813dd565864a825ae5a7769330f,
+        type: 3}
     - target: {fileID: 4253384946614091078, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -7470,6 +7505,11 @@ PrefabInstance:
       propertyPath: countdownTime
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5257639690271972501, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: m_Text
+      value: L Lung Sound
+      objectReference: {fileID: 0}
     - target: {fileID: 5546855945346738264, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
       propertyPath: m_Sprite
@@ -7518,6 +7558,61 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6850260738623626307, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850260738623626307, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 1268674209}
+    - target: {fileID: 6850260738623626307, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: graphic
+      value: 
+      objectReference: {fileID: 87320732}
+    - target: {fileID: 6850260738623626307, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4174042714975501723}
+    - target: {fileID: 6850260738623626307, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_mute
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850260738623626307, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850260738623626307, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850260738623626307, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6407222590980704193}
+    - target: {fileID: 6850260738623626307, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_mute
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850260738623626307, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850260738623626307, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6851569720508292415, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
       propertyPath: countdownTime
@@ -7553,7 +7648,7 @@ PrefabInstance:
     - target: {fileID: 7463624300259404875, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7463624300259404875, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
@@ -7569,7 +7664,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4174042714975501723}
+      objectReference: {fileID: 6407222590980704193}
     - target: {fileID: 7463624300259404875, guid: 33b3057cb853bd64aba6effb026e25f3,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -7712,6 +7807,11 @@ PrefabInstance:
       propertyPath: countdownTime
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 9093580930439896185, guid: 33b3057cb853bd64aba6effb026e25f3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b3057cb853bd64aba6effb026e25f3, type: 3}
 --- !u!114 &1290165358 stripped
@@ -7755,7 +7855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784abafd9ac83194a9e9aaa5f1c25ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 828806819}
+  data: {fileID: 1789933763}
   initialStateFile: {fileID: 4900000, guid: 61ab5c55f86d65a498e79bce05f92e9f, type: 3}
   serializationFormat: 1
   timeStep: 0.02
@@ -10761,6 +10861,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764693407}
   m_CullTransparentMesh: 0
+--- !u!114 &1789933763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c300108eb8c4b144a3c57c88e71fca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fields:
+  - Simulation Time(s)
+  - Lead3ElectricPotential(mV)
+  - "HeartRate(1\u2215min)"
+  - ArterialPressure(mmHg)
+  - MeanArterialPressure(mmHg)
+  - SystolicArterialPressure(mmHg)
+  - DiastolicArterialPressure(mmHg)
+  - OxygenSaturation()
+  - EndTidalCarbonDioxidePressure(mmHg)
+  - "RespirationRate(1\u2215min)"
+  - SkinTemperature(degC)
+  - Carina-CarbonDioxide-PartialPressure(mmHg)
+  - BloodVolume(mL)
+  timeStampList:
+    list: []
+  valuesTable:
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
+  - list: []
 --- !u!1 &1847733012
 GameObject:
   m_ObjectHideFlags: 0
@@ -12129,6 +12271,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eda371e5375f454490a86f21559ee38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1981162205287722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981162205287718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 479d695282ba6cf4ba3ab3c4848f05e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectUsing: 0
+  SelectUsingAlt: -1
+  SelectUsingAltAlt: -1
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  Camera: {fileID: 0}
+  MaxSelectables: 0
+  Search: 1
+  Reselect: 3
+  AutoDeselect: 0
+  MaxScreenDistance: 50
 --- !u!4 &4483696130257114 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4983919561198952110, guid: ba619e587f63bf047a1582cea722da6f,
@@ -12176,6 +12342,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Manikin
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981707216726834003, guid: ba619e587f63bf047a1582cea722da6f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4982561781106658707, guid: ba619e587f63bf047a1582cea722da6f,
         type: 3}

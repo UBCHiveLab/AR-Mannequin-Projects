@@ -42,6 +42,7 @@ public class PhotonEvents : MonoBehaviourPunCallbacks
         toggleEvent.Add(EventCodeUtility.CONSTRICT_TOGGLE_R, false);
         toggleEvent.Add(EventCodeUtility.ECG_SOUND_TOGGLE, false);
         toggleEvent.Add(EventCodeUtility.ECG_TOGGLE, false);
+        toggleEvent.Add(EventCodeUtility.CUFF_TOGGLE, false);
     }
 
     /* public void TestMessage()

@@ -50,5 +50,7 @@ public static class EventCodeUtility {
 
     public const byte STUDENT_MESSAGE = 31;
 
+    public const byte CUFF_TOGGLE = 32;
+
     public const byte QUIT_SESSION = 254;
 }

@@ -165,6 +165,10 @@ public class PhotonReceiver : MonoBehaviour {
                 Debug.Log("ECG Toggled");
                 InvokeECGHookUp((bool)datas[0]);
                 break;
+            case EventCodeUtility.CUFF_TOGGLE:
+                Debug.Log("Cuff Toggled");
+                InvokeCuffHookUp((bool)datas[0]);
+                break;
             default:
                 Debug.Log("Unhandled event code" + obj.ToString());
                 break;
@@ -225,5 +229,9 @@ public class PhotonReceiver : MonoBehaviour {
     private void InvokeECGHookUp(bool status)
     {
         EventManager.Instance.publishECGHookUpEvent(status);
+    }
+    private void InvokeCuffHookUp(bool status)
+    {
+        EventManager.Instance.publishCuffHookUpEvent(status);
     }
 }

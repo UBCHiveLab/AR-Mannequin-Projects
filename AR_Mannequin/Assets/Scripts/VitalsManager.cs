@@ -23,8 +23,10 @@ public enum VitalActions
     AbdominalExam,
     [Description("Insert LO")]
     InsertLO,
-    [Description("Lung Sounds")]
-    LungSounds,
+    [Description("R Lung Sounds")]
+    RightLungSounds,
+    [Description("L Lung Sounds")]
+    LeftLungSounds,
     [Description("Heart Sounds")]
     HeartSounds,
     [Description("Chest Compression")]

@@ -25,7 +25,11 @@ public class DrawScript : MonoBehaviour
         }
         catch { }
         speed = 2 * ((float)ratioSpeed / 86);
-        DrawTravellingSineWave(new Vector3(0,0,0), waveAmplitude, lenght, speed);
+        if (ratioSpeed < 0.5) { DrawTravellingSineWave(new Vector3(0, 0, 0), 0, lenght, speed); }
+        else
+        {
+            DrawTravellingSineWave(new Vector3(0, 0, 0), waveAmplitude, lenght, speed);
+        }
     }
 
     void DrawTriangle(Vector3[] vertexPositions, float startWidth, float endWidth)
