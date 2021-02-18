@@ -1,3 +1,6 @@
 # Don't track content of there files
 
+# Ignore Android related files
 *.apk
+*.aab
+*.obb
